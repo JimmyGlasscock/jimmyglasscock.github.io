@@ -213,9 +213,6 @@ export default function App() {
                     allowFullScreen
                   />
                 </div>
-                <div className="clipMeta">
-                  <div className="clipTitle">{clip.title}</div>
-                </div>
               </div>
             ))}
           </div>
