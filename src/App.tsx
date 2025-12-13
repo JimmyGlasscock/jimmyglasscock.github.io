@@ -198,7 +198,6 @@ export default function App() {
         <section className="section afterthoughtSection" aria-label="More clips">
           <div className="sectionHeader">
             <h3 className="h3">More clips</h3>
-            <p className="muted small">If you want extra context.</p>
           </div>
 
           <div className="grid2">
@@ -216,7 +215,6 @@ export default function App() {
                 </div>
                 <div className="clipMeta">
                   <div className="clipTitle">{clip.title}</div>
-                  <div className="muted small">{clip.note}</div>
                 </div>
               </div>
             ))}
