@@ -167,7 +167,7 @@ export default function App() {
             </p>
             <p className="p">
               Jimmy has built a fast-growing online audience with <strong>56,000+ YouTube subscribers</strong> and
-              <strong> over 1 million views on TikTok</strong>. He has performed at clubs, corporate shows, and regularly hosts shows throughout Utah. He has been featured in <strong>SLUG Magazine</strong> and <strong>Don’t Tell Comedy (Utah)</strong>, and is quickly becoming a familiar face in the Salt Lake comedy scene.
+              <strong> over 1 million views on TikTok</strong>. He has performed at clubs, corporate shows, and regularly hosts shows throughout Utah. He has been featured in <strong>SLUG Magazine</strong> and on <strong>Don’t Tell Comedy (Utah)</strong>. Jimmy has quickly become a familiar face in the Salt Lake comedy scene.
             </p>
           </div>
         </section>
