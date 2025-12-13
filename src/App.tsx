@@ -193,6 +193,35 @@ export default function App() {
           </div>
         </section>
 
+        {/* PRESS */}
+        <section className="section" id="press" aria-label="Press">
+          <div className="sectionHeader">
+            <h2 className="h2">Press</h2>
+            <p className="muted">Featured in SLUG Magazine.</p>
+          </div>
+
+          <a
+            className="card pressCard pressLink"
+            href="https://www.slugmag.com/music/interviews/localized/stand-up-comedy-localized-2025/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Read Jimmy Glasscock feature in SLUG Magazine"
+          >
+            <img
+              className="pressThumb"
+              src="https://www.slugmag.com/wp/wp-content/uploads/2024/05/Comedy-Localized-Dec-Web-Header.webp"
+              alt="SLUG Localized: Stand-Up Comedy Showcase header image"
+              loading="lazy"
+            />
+
+            <div className="pressBody">
+              <div className="pressEyebrow">SLUG Magazine</div>
+              <div className="pressTitle">Stand-Up Comedy: Localized (2025)</div>
+              <div className="pressCta">Read the article →</div>
+            </div>
+          </a>
+        </section>
+
         {/* OTHER CLIPS */}
         <section className="section afterthoughtSection" aria-label="More clips">
           <div className="sectionHeader">

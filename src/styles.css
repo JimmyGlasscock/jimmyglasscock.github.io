@@ -485,3 +485,77 @@ a{ color: inherit; text-decoration: none; }
   border-radius: 50%; /* ✅ perfect circle */
   object-fit: cover;
 }
+
+
+/* =========================================================
+   PRESS CARD (with image)
+   ========================================================= */
+
+.pressCard{
+  padding: 0; /* image handles the top */
+  overflow: hidden;
+}
+
+.pressLink{
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+.pressLink:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.18);
+}
+
+.pressThumb{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid var(--border);
+}
+
+.pressBody{
+  padding: 1.1rem;
+}
+
+.pressEyebrow{
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: .35rem;
+}
+
+.pressTitle{
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: .55rem;
+}
+
+.pressCta{
+  font-size: .95rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.88);
+}
+
+/* Desktop: make it a side-by-side card */
+@media (min-width: 820px){
+  .pressLink{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    align-items: stretch;
+  }
+
+  .pressThumb{
+    height: 100%;
+    min-height: 170px;
+    border-bottom: none;
+    border-right: 1px solid var(--border);
+  }
+
+  .pressBody{
+    padding: 1.25rem;
+  }
+}
