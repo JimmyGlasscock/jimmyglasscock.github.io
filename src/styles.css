@@ -262,22 +262,61 @@ a{ color: inherit; text-decoration: none; }
 
 .photoWrap{ width:100%; }
 
+/* =========================================================
+   PHOTOS — MOBILE: STACKED VERTICAL
+   ========================================================= */
+
+.photoWrap{
+  width: 100%;
+}
+
+/* Kill the horizontal scroller entirely */
 .photoScroller{
-  display:flex;
-  gap: .75rem;
-  overflow-x: auto;
-  padding: .25rem .1rem .9rem;
-  scroll-snap-type: x mandatory;
+  display: none;
 }
 
-.photoScroller::-webkit-scrollbar{
-  height: 8px;
+/* Mobile-first: stacked vertical list */
+.photoGrid{
+  display: grid;
+  grid-template-columns: 1fr;   /* ✅ one per row */
+  gap: .85rem;
 }
 
-.photoScroller::-webkit-scrollbar-thumb{
-  background: rgba(255,255,255,0.12);
-  border-radius: 999px;
+.photoGridItem{
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.25);
+  box-shadow: var(--shadow);
 }
+
+.photoGridItem img{
+  width: 100%;
+  height: 240px;               /* ✅ consistent, looks clean */
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 600px){
+  .photoGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .photoGridItem img{
+    height: 220px;
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 820px){
+  .photoGrid{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .photoGridItem img{
+    height: 260px;
+  }
+}
+
 
 .photo{
   scroll-snap-align: start;
@@ -296,8 +335,6 @@ a{ color: inherit; text-decoration: none; }
   object-fit: cover;
   display:block;
 }
-
-.photoGrid{ display:none; }
 
 /* =========================================================
    BOOKING
@@ -370,4 +407,57 @@ a{ color: inherit; text-decoration: none; }
   .bookingActions{
     justify-content: flex-end;
   }
+}
+
+/* =========================================================
+   YOUTUBE SUBSCRIBE WIDGET STYLING
+   ========================================================= */
+
+.youtubeWidgetStat{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container polish */
+.youtubeWidgetStat .g-ytsubscribe{
+  background: rgba(0,0,0,0.25);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .35rem .6rem;
+  box-shadow: var(--shadow);
+}
+
+/* Attempt to round avatar (works in modern browsers) */
+.youtubeWidgetStat iframe{
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+/* =========================================================
+   CLICKABLE STAT TILE
+   ========================================================= */
+
+.statLink{
+  text-decoration: none;
+  color: inherit;
+  transition: transform .15s ease, background .15s ease;
+}
+
+.statLink:hover{
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.08);
+}
+
+.youtubeCustom{
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}
+
+.youtubeAvatar{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%; /* ✅ perfect circle */
+  object-fit: cover;
 }

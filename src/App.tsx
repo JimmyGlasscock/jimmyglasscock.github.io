@@ -23,16 +23,16 @@ const OTHER_CLIPS = [
 ]
 
 const PHOTO_FILENAMES: string[] = [
-  'headshot-1.jpg',
-  'great-photo-of-me-on-stage.jpg',
-  'hive-tattoo-dont-tell-show.jpg',
-  'mugshot-style-headshot.jpg',
-  'close-up-of-me-on-stage.png',
-  'dont-tell-at-the-downstairs.jpg',
-  'full-body-shot-of-me-on-stage.jpg',
-  'silly-headshot.jpg',
-  'stand-up-at-the-zoo.jpg',
-  'wide-headshot.jpg',
+  '1.jpg',
+  '2.jpg',
+  '3.jpg',
+  '4.png',
+  '5.jpg',
+  '6.jpg',
+  '7.jpg',
+  '8.jpg',
+  '9.jpg',
+  '10.jpg',
 ]
 
 function usePrefersReducedMotion() {
@@ -59,6 +59,14 @@ export default function App() {
       })),
     [],
   )
+
+  useEffect(() => {
+    const run = () => (window as any).gapi?.ytsubscribe?.go?.()
+    // Run once now, and once shortly after (script can load a beat later)
+    run()
+    const t = window.setTimeout(run, 300)
+    return () => window.clearTimeout(t)
+  }, [])
 
   useEffect(() => {
     const v = videoRef.current
@@ -107,14 +115,32 @@ export default function App() {
           </div>
 
           <div className="stats" aria-label="Highlights">
-            <div className="stat">
-              <div className="statTop">56K+</div>
-              <div className="statBottom">YouTube subscribers</div>
-            </div>
-            <div className="stat">
-              <div className="statTop">1M+</div>
-              <div className="statBottom">TikTok views</div>
-            </div>
+            <a
+              className="stat statLink youtubeCustom"
+              href="https://www.youtube.com/@JimmyGlasscock"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="youtubeAvatar"
+                src="/photos/youtube-avatar.jpg"
+                alt="Jimmy Glasscock YouTube"
+              />
+              <div>
+                <div className="statTop">56K+</div>
+                <div className="statBottom">YouTube subscribers</div>
+              </div>
+            </a>
+          <a
+            className="stat statLink"
+            href="https://www.tiktok.com/@jimmyglasscock?lang=en"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Jimmy Glasscock on TikTok"
+          >
+            <div className="statTop">1M+</div>
+            <div className="statBottom">TikTok views</div>
+          </a>
             <div className="stat">
               <div className="statTop">Don’t Tell Comedy</div>
               <div className="statBottom">Utah feature</div>
@@ -201,7 +227,6 @@ export default function App() {
         <section className="section" id="photos" aria-label="Press photos">
           <div className="sectionHeader">
             <h2 className="h2">Photos</h2>
-            <p className="muted">Swipe on mobile · grid on desktop.</p>
           </div>
 
           <div className="photoWrap">
