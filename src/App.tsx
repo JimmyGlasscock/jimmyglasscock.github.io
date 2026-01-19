@@ -98,7 +98,7 @@ export default function App() {
             <span className="nameFont">Jimmy Glasscock</span>
           </h1>
 
-          <p className="subline">Sharp stand-up from Salt Lake City.</p>
+          <p className="subline">Stand-Up Comedian from Salt Lake City.</p>
 
           <div className="ctaRow">
             <a className="btn primary" href={`mailto:${EMAIL}`}>
@@ -162,12 +162,11 @@ export default function App() {
 
           <div className="card">
             <p className="p">
-              <strong>Jimmy Glasscock</strong> is a stand-up comedian based in Salt Lake City who cares about great jokes.
-              His favorite material works just as well one-on-one as it does on stage — jokes that still land when told to a friend.
+              <strong>Jimmy Glasscock</strong> is a Stand Up Comedian who quickly made his mark on the Salt Lake City comedy scene and lost his virginity at the ripe age of 24. For him, no topic is off limits - the weather, traffic, airline food, you name it.
             </p>
             <p className="p">
               Jimmy has built a fast-growing online audience with <strong>56,000+ YouTube subscribers</strong> and
-              <strong> over 1 million views on TikTok</strong>. He has performed at clubs, corporate shows, and regularly hosts shows throughout Utah. He has been featured in <strong>SLUG Magazine</strong> and on <strong>Don’t Tell Comedy (Utah)</strong>. Jimmy has quickly become a familiar face in the Salt Lake comedy scene.
+              <strong> over 1 million views on TikTok</strong>. He has performed at clubs, corporate shows, and regularly hosts shows throughout Utah. He has been featured in <strong>SLUG Magazine</strong>, <strong>Don’t Tell Comedy (Utah)</strong> and even the local news. Jimmy has quickly become a familiar face in the Salt Lake comedy scene.
             </p>
           </div>
         </section>
