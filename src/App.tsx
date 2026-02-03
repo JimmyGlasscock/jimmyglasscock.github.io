@@ -16,8 +16,8 @@ const OTHER_CLIPS = [
     note: 'Short clip',
   },
   {
-    title: 'Turning Fight Videos Into Songs',
-    url: 'https://www.youtube.com/embed/zCnZB6_m7BE',
+    title: 'Making Music Out of HR Videos',
+    url: 'https://www.youtube.com/embed/LqkGVfqLbJI',
     note: 'Bonus: comedy + music',
   },
 ]
