@@ -5,7 +5,7 @@ const INSTAGRAM_URL = 'https://instagram.com/jimmyglasscock'
 
 const FEATURED_TAPE = {
   title: 'Featured Tape',
-  url: 'https://www.youtube.com/embed/Sbxpm1zbMhs',
+  url: 'https://www.youtube.com/embed/vOGIRbYo0IA',
   note: 'This is the one to watch.',
 }
 
