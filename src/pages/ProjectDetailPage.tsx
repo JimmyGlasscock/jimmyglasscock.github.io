@@ -554,7 +554,7 @@ export default function ProjectDetailPage() {
             </div>
           </div>
 
-          <div className="postGameCard" aria-label="Professor Oak battle">
+          <div className="card postGameCard" aria-label="Professor Oak battle">
               <div className="oakBattleCard">
                 <h4 className="postGameH4 postGameTitle">{project.postGameGuide.oakBattle.title}</h4>
                 <p className="p muted postGameIntro">{project.postGameGuide.oakBattle.subtitle}</p>
