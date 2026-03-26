@@ -23,7 +23,6 @@ export default function ProjectsPage() {
     <main className="container pageContent">
       <header className="sectionHeader" aria-label="Projects header">
         <h2 className="h2">Projects</h2>
-        <p className="muted">A couple of favorite ROM-hack enhancement projects.</p>
       </header>
 
       <section className="card projectsCard" aria-label="Project list">

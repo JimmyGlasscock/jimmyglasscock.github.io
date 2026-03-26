@@ -383,6 +383,86 @@ a{ color: inherit; text-decoration: none; }
 
 /* Keep a single column so each project is its own row (mobile + desktop). */
 
+.projectVideoWrap{
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ratioProjectVideo{
+  border-radius: var(--radius-lg);
+}
+
+.projectScreensCard{
+  padding: 1rem;
+}
+
+.projectScreensGrid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .85rem;
+}
+
+.projectScreenshotItem{
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.22);
+}
+
+.projectScreenshotImg{
+  display:block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.projectScreenshotPlaceholder{
+  height: 240px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 1rem;
+  color: var(--muted);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.projectChangesList{
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.projectChangesList li{
+  margin: .5rem 0;
+  color: var(--text);
+}
+
+.projectOtherInfo p{
+  margin: .75rem 0 0;
+}
+
+@media (min-width: 600px){
+  .projectScreensGrid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .projectScreenshotImg{
+    height: 220px;
+  }
+  .projectScreenshotPlaceholder{
+    height: 220px;
+  }
+}
+
+@media (min-width: 820px){
+  .projectScreenshotImg{
+    height: 260px;
+  }
+  .projectScreenshotPlaceholder{
+    height: 260px;
+  }
+}
+
 @media (max-width: 480px){
   .projectLink{
     align-items:flex-start;
