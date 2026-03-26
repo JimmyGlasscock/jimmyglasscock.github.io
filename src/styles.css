@@ -474,6 +474,17 @@ a{ color: inherit; text-decoration: none; }
   letter-spacing: -0.01em;
 }
 
+.postGameTitle{
+  font-size: clamp(1.45rem, 4.2vw, 2.2rem);
+  line-height: 1.05;
+  margin-bottom: .45rem;
+}
+
+.postGameIntro{
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
 .assetPlaceholder{
   width: 100%;
   min-height: 160px;
@@ -527,11 +538,26 @@ a{ color: inherit; text-decoration: none; }
   background: rgba(0,0,0,0.18);
 }
 
+@media (max-width: 600px){
+  .teamMember{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .teamPokeSprite{
+    align-self: center;
+  }
+}
+
 .pokeSprite{
   width: 56px;
   height: 56px;
   flex: 0 0 auto;
   image-rendering: pixelated;
+}
+
+.teamPokeSprite{
+  width: 200px;
+  height: 200px;
 }
 
 .teamMeta{

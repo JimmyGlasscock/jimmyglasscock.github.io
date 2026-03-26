@@ -6,11 +6,18 @@ const sharp = require('sharp')
 const inputDir = path.join(__dirname, '..', 'public', 'photos', 'firered')
 const outputDir = path.join(inputDir, 'upscaled')
 
-const items = [1, 2, 3, 4].map((n) => ({
-  n,
-  input: path.join(inputDir, `${n}.png`),
-  output: path.join(outputDir, `${n}.png`),
-}))
+const items = [
+  ...[1, 2, 3, 4].map((n) => ({
+    name: String(n),
+    input: path.join(inputDir, `${n}.png`),
+    output: path.join(outputDir, `${n}.png`),
+  })),
+  {
+    name: 'ChronosMeadow',
+    input: path.join(inputDir, 'ChronosMeadow.png'),
+    output: path.join(outputDir, 'ChronosMeadow.png'),
+  },
+]
 
 async function main() {
   fs.mkdirSync(outputDir, { recursive: true })

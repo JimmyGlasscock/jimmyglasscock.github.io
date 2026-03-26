@@ -64,8 +64,10 @@ const PROJECTS = [
     ],
     otherInfo: ['Other info coming soon.'],
     postGameGuide: {
-      rangerJimmySpriteSrc: '',
-      chronosIsleMapSrc: '',
+      // FireRed/LeafGreen-style Ranger trainer sprite
+      rangerJimmySpriteSrc:
+        'https://raw.githubusercontent.com/pret/pokefirered/master/graphics/trainers/front_pics/ranger_m.png',
+      chronosIsleMapSrc: '/photos/firered/upscaled/ChronosMeadow.png',
       team: [
         {
           dex: 157,
@@ -271,7 +273,12 @@ export default function ProjectDetailPage() {
 
           <div className="card postGameCard">
             <div className="postGameBlock">
-              <h4 className="postGameH4">Battle Against Pokemon Ranger Jimmy</h4>
+              <h4 className="postGameH4 postGameTitle">Battle Against Pokemon Ranger Jimmy</h4>
+              <p className="p muted postGameIntro">
+                Outside memorial pillar on Five Island, Pokemon Ranger Jimmy will challenge you to a
+                battle for a sweet reward. Bring plenty of potions because this is going to be
+                tough!
+              </p>
 
               <div className="rangerRow">
                 <div className="rangerSpriteWrap" aria-label="Pokemon Ranger sprite placeholder">
@@ -289,7 +296,11 @@ export default function ProjectDetailPage() {
                 <div className="teamList" aria-label="Ranger Jimmy team">
                   {project.postGameGuide.team.map((m) => (
                     <div key={m.name} className="teamMember">
-                      <img className="pokeSprite" src={spriteUrl(m.dex)} alt={`${m.name} sprite`} />
+                      <img
+                        className="pokeSprite teamPokeSprite"
+                        src={spriteUrl(m.dex)}
+                        alt={`${m.name} sprite`}
+                      />
                       <div className="teamMeta">
                         <div className="teamTopRow">
                           <div className="teamName">
