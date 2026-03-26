@@ -140,6 +140,7 @@ const PROJECTS = [
         name: 'Celebi',
         level: 50,
         note: 'Awaiting you at the end of Chronos Isle is the legendary pokemon Celebi!',
+        moves: ['Ancient Power', 'Future Sight', 'Baton Pass', 'Perish Song'] as const,
       },
     },
   },
@@ -267,12 +268,13 @@ export default function ProjectDetailPage() {
       {project.postGameGuide ? (
         <section className="section" aria-label="New Post Game updates">
           <div className="sectionHeader">
-            <h3 className="h3">New Post Game updates</h3>
+            <h4 className="postGameH4 postGameTitle">New Post Game updates</h4>
           </div>
 
           <div className="card postGameCard">
             <div className="postGameBlock">
               <h4 className="postGameH4 postGameTitle">Battle Against Pokemon Ranger Jimmy</h4>
+              <br/>
               <p className="p muted postGameIntro">
                 Outside memorial pillar on Five Island, Pokemon Ranger Jimmy will challenge you to a
                 battle for a sweet reward. Bring plenty of potions because this is going to be
@@ -331,7 +333,7 @@ export default function ProjectDetailPage() {
             </div>
 
             <div className="postGameBlock">
-              <p className="p muted">{project.postGameGuide.rewardText}</p>
+              <h4 className="postGameH4 postGameTitle">{project.postGameGuide.rewardText}</h4>
 
               <div className="chronosMapWrap" aria-label="Chronos Isle map">
                 <img
@@ -381,7 +383,9 @@ export default function ProjectDetailPage() {
             </div>
 
             <div className="postGameBlock" aria-label="Celebi">
-              <p className="p muted">{project.postGameGuide.celebi.note}</p>
+              <br/>
+              <h4 className="p muted">{project.postGameGuide.celebi.note}</h4>
+              <br/>
               <div className="celebiCard">
                 <img
                   className="pokeSprite celebiSprite"
@@ -392,6 +396,16 @@ export default function ProjectDetailPage() {
                   <div className="teamName">
                     {project.postGameGuide.celebi.name}{' '}
                     <span className="muted">Level {project.postGameGuide.celebi.level}</span>
+                  </div>
+                  <div className="teamMoves" style={{ marginTop: '.75rem' }}>
+                    <div className="muted small">Moves:</div>
+                    <ul className="movesGrid" aria-label="Celebi moves">
+                      {project.postGameGuide.celebi.moves.map((mv) => (
+                        <li key={mv} className="movePill">
+                          {mv}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </div>
