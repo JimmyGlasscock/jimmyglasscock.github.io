@@ -546,13 +546,9 @@ export default function ProjectDetailPage() {
                 </div>
               </div>
             </div>
-
-            <div className="ctaRow">
-              <Link className="btn ghost" to="/projects">
-                Back to projects
-              </Link>
-            </div>
           </div>
+
+          <br/>
 
           <div className="card postGameCard" aria-label="Professor Oak battle">
               <div className="oakBattleCard">
