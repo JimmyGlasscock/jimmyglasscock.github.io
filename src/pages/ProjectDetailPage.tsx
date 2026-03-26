@@ -1,6 +1,22 @@
 import { useMemo } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+function spriteUrl(dexNumber: number) {
+  return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${dexNumber}.png`
+}
+
+type PokeType =
+  | 'Fire'
+  | 'Flying'
+  | 'Poison'
+  | 'Grass'
+  | 'Fighting'
+  | 'Electric'
+  | 'Water'
+  | 'Steel'
+  | 'Rock'
+  | 'Dark'
+
 const PROJECTS = [
   {
     slug: 'fire-red-leaf-green-enhancements',
@@ -47,6 +63,84 @@ const PROJECTS = [
       'Modern Exp Share toggle',
     ],
     otherInfo: ['Other info coming soon.'],
+    postGameGuide: {
+      rangerJimmySpriteSrc: '',
+      chronosIsleMapSrc: '',
+      team: [
+        {
+          dex: 157,
+          name: 'Typhlosion',
+          level: 68,
+          types: ['Fire'] as const,
+          moves: ['Flamethrower', 'ThunderPunch', 'Earthquake', 'Rock Slide'] as const,
+        },
+        {
+          dex: 169,
+          name: 'Crobat',
+          level: 66,
+          types: ['Poison', 'Flying'] as const,
+          moves: ['Sludge Bomb', 'Air Cutter', 'Shadow Ball', 'Confuse Ray'] as const,
+        },
+        {
+          dex: 286,
+          name: 'Breloom',
+          level: 67,
+          types: ['Grass', 'Fighting'] as const,
+          moves: ['Sky Uppercut', 'Mach Punch', 'Sludge Bomb', 'Spore'] as const,
+        },
+        {
+          dex: 26,
+          name: 'Raichu',
+          level: 71,
+          types: ['Electric'] as const,
+          moves: ['Thunderbolt', 'Brick Break', 'Iron Tail', 'Surf'] as const,
+        },
+        {
+          dex: 395,
+          name: 'Empoleon',
+          level: 64,
+          types: ['Water', 'Steel'] as const,
+          moves: ['Drill Peck', 'Metal Claw', 'Blizzard', 'Hydro Pump'] as const,
+        },
+        {
+          dex: 248,
+          name: 'Tyranitar',
+          level: 69,
+          types: ['Rock', 'Dark'] as const,
+          moves: ['Rock Slide', 'Earthquake', 'Crunch', 'Aerial Ace'] as const,
+        },
+      ],
+      rewardText:
+        'Upon beating Jimmy, he will reward you with the Chronos Ticket, which will give you access to Chronos Isle. Chronos Isle contains many trainers waiting to battle, and a whole slew of pokemon from the hoenn region!',
+      encounters: {
+        grass: [
+          { dex: 290, name: 'Nincada', rate: '30%', levels: 'Lv 29–55' },
+          { dex: 285, name: 'Shroomish', rate: '20%', levels: 'Lv 37–49' },
+          { dex: 263, name: 'Zigzagoon', rate: '10%', levels: 'Lv 39–51' },
+          { dex: 264, name: 'Linoone', rate: '10%', levels: 'Lv 46–57' },
+          { dex: 270, name: 'Lotad', rate: '10%', levels: 'Lv 33–52' },
+          { dex: 287, name: 'Slakoth', rate: '5%', levels: 'Lv 37–44' },
+          { dex: 283, name: 'Surskit', rate: '5%', levels: 'Lv 39–49' },
+          { dex: 315, name: 'Roselia', rate: '4%', levels: 'Lv 41–53' },
+          { dex: 300, name: 'Skitty', rate: '4%', levels: 'Lv 36–56' },
+          { dex: 359, name: 'Absol', rate: '1%', levels: 'Lv 44–58' },
+          { dex: 291, name: 'Ninjask', rate: '1%', levels: 'Lv 44–58' },
+        ],
+        surf: [
+          { dex: 278, name: 'Wingull', rate: '60%', levels: 'Lv 28–47' },
+          { dex: 339, name: 'Barboach', rate: '30%', levels: 'Lv 24–61' },
+          { dex: 318, name: 'Carvanha', rate: '5%', levels: 'Lv 31–53' },
+          { dex: 341, name: 'Corphish', rate: '4%', levels: 'Lv 38–51' },
+          { dex: 349, name: 'Feebas', rate: '1%', levels: 'Lv 31–45' },
+        ],
+      },
+      celebi: {
+        dex: 251,
+        name: 'Celebi',
+        level: 50,
+        note: 'Awaiting you at the end of Chronos Isle is the legendary pokemon Celebi!',
+      },
+    },
   },
   {
     slug: 'ruby-sapphire-enhancements',
@@ -62,6 +156,7 @@ const PROJECTS = [
     ],
     changes: ['Add a bullet point for a key change.', 'Add another specific change.'],
     otherInfo: ['Add any notes, credits, or links here.'],
+    postGameGuide: undefined,
   },
 ] as const
 
@@ -118,7 +213,7 @@ export default function ProjectDetailPage() {
               target="_blank"
               rel="noreferrer"
             >
-              {project.downloadText ?? 'Download files'}
+              {project.downloadText ?? 'Download Patch'}
             </a>
           </div>
         ) : null}
@@ -167,26 +262,158 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
-      {/* OTHER INFO */}
-      <section className="section" aria-label="Project other info">
-        <div className="sectionHeader">
-          <h3 className="h3">Other info</h3>
-        </div>
-
-        <div className="card">
-          {project.otherInfo.map((t, idx) => (
-            <p key={idx} className="p muted">
-              {t}
-            </p>
-          ))}
-
-          <div className="ctaRow">
-            <Link className="btn ghost" to="/projects">
-              Back to projects
-            </Link>
+      {/* POST GAME GUIDE (FireRed / LeafGreen) */}
+      {project.postGameGuide ? (
+        <section className="section" aria-label="New Post Game updates">
+          <div className="sectionHeader">
+            <h3 className="h3">New Post Game updates</h3>
           </div>
-        </div>
-      </section>
+
+          <div className="card postGameCard">
+            <div className="postGameBlock">
+              <h4 className="postGameH4">Battle Against Pokemon Ranger Jimmy</h4>
+
+              <div className="rangerRow">
+                <div className="rangerSpriteWrap" aria-label="Pokemon Ranger sprite placeholder">
+                  {project.postGameGuide.rangerJimmySpriteSrc ? (
+                    <img
+                      className="rangerSprite"
+                      src={project.postGameGuide.rangerJimmySpriteSrc}
+                      alt="Pokemon Ranger Jimmy sprite"
+                    />
+                  ) : (
+                    <div className="assetPlaceholder">[Pokemon Ranger Sprite]</div>
+                  )}
+                </div>
+
+                <div className="teamList" aria-label="Ranger Jimmy team">
+                  {project.postGameGuide.team.map((m) => (
+                    <div key={m.name} className="teamMember">
+                      <img className="pokeSprite" src={spriteUrl(m.dex)} alt={`${m.name} sprite`} />
+                      <div className="teamMeta">
+                        <div className="teamTopRow">
+                          <div className="teamName">
+                            {m.name} <span className="muted">Level {m.level}</span>
+                          </div>
+                          <div className="typeBadges" aria-label={`${m.name} types`}>
+                            {m.types.map((t: PokeType) => (
+                              <span key={t} className={`typeBadge type-${t.toLowerCase()}`}>
+                                {t}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="teamMoves">
+                          <span className="muted small">Moves:</span>{' '}
+                          {m.moves.join(', ')}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="postGameBlock">
+              <p className="p muted">{project.postGameGuide.rewardText}</p>
+
+              <div className="chronosMapWrap" aria-label="Chronos Isle map placeholder">
+                {project.postGameGuide.chronosIsleMapSrc ? (
+                  <img
+                    className="chronosMap"
+                    src={project.postGameGuide.chronosIsleMapSrc}
+                    alt="Chronos Isle map"
+                  />
+                ) : (
+                  <div className="assetPlaceholder">[Map of Chronos Isle - to be provided]</div>
+                )}
+              </div>
+            </div>
+
+            <div className="postGameBlock" aria-label="Encounter breakdown">
+              <h4 className="postGameH4">Encounter breakdown</h4>
+
+              <div className="encounterColumns">
+                <div className="encounterCol">
+                  <div className="encounterTitle">Grass encounters (Walking)</div>
+                  <div className="encounterList">
+                    {project.postGameGuide.encounters.grass.map((e) => (
+                      <div key={`${e.name}-${e.rate}-${e.levels}`} className="encounterRow">
+                        <img className="pokeSprite" src={spriteUrl(e.dex)} alt={`${e.name} sprite`} />
+                        <div className="encounterName">{e.name}</div>
+                        <div className="encounterMeta">
+                          <span className="encounterRate">{e.rate}</span>
+                          <span className="muted small">{e.levels}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="encounterCol">
+                  <div className="encounterTitle">Surfing encounters</div>
+                  <div className="encounterList">
+                    {project.postGameGuide.encounters.surf.map((e) => (
+                      <div key={`${e.name}-${e.rate}-${e.levels}`} className="encounterRow">
+                        <img className="pokeSprite" src={spriteUrl(e.dex)} alt={`${e.name} sprite`} />
+                        <div className="encounterName">{e.name}</div>
+                        <div className="encounterMeta">
+                          <span className="encounterRate">{e.rate}</span>
+                          <span className="muted small">{e.levels}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="postGameBlock" aria-label="Celebi">
+              <p className="p muted">{project.postGameGuide.celebi.note}</p>
+              <div className="celebiCard">
+                <img
+                  className="pokeSprite celebiSprite"
+                  src={spriteUrl(project.postGameGuide.celebi.dex)}
+                  alt={`${project.postGameGuide.celebi.name} sprite`}
+                />
+                <div>
+                  <div className="teamName">
+                    {project.postGameGuide.celebi.name}{' '}
+                    <span className="muted">Level {project.postGameGuide.celebi.level}</span>
+                  </div>
+                  <div className="muted small">[Graphic similar to Serebii.net]</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="ctaRow">
+              <Link className="btn ghost" to="/projects">
+                Back to projects
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className="section" aria-label="Project other info">
+          <div className="sectionHeader">
+            <h3 className="h3">Other info</h3>
+          </div>
+
+          <div className="card">
+            {project.otherInfo.map((t, idx) => (
+              <p key={idx} className="p muted">
+                {t}
+              </p>
+            ))}
+
+            <div className="ctaRow">
+              <Link className="btn ghost" to="/projects">
+                Back to projects
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
     </main>
   )
 }

@@ -399,6 +399,7 @@ a{ color: inherit; text-decoration: none; }
 .projectDownloadButton{
   width: 50%;
   display: inline-block;
+  text-align: center;
 }
 
 .projectScreensCard{
@@ -451,6 +452,207 @@ a{ color: inherit; text-decoration: none; }
   margin: .75rem 0 0;
 }
 
+.postGameCard{
+  padding: 1.15rem;
+}
+
+.postGameBlock{
+  padding-top: 1.1rem;
+  margin-top: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+.postGameBlock:first-child{
+  padding-top: 0;
+  margin-top: 0;
+  border-top: 0;
+}
+
+.postGameH4{
+  margin: 0 0 .75rem;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+}
+
+.assetPlaceholder{
+  width: 100%;
+  min-height: 160px;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(255,255,255,0.22);
+  background: rgba(255,255,255,0.03);
+  color: var(--muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 1rem;
+  font-weight: 800;
+}
+
+.rangerRow{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.rangerSpriteWrap{
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.20);
+  padding: 1rem;
+  display:flex;
+  justify-content:center;
+}
+
+.rangerSprite{
+  max-width: 240px;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.teamList{
+  display: grid;
+  gap: .7rem;
+}
+
+.teamMember{
+  display:flex;
+  gap: .7rem;
+  align-items: center;
+  padding: .75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.18);
+}
+
+.pokeSprite{
+  width: 56px;
+  height: 56px;
+  flex: 0 0 auto;
+  image-rendering: pixelated;
+}
+
+.teamMeta{
+  min-width: 0;
+  width: 100%;
+}
+
+.teamTopRow{
+  display:flex;
+  gap: .6rem;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.teamName{
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.teamMoves{
+  margin-top: .25rem;
+}
+
+.typeBadges{
+  display:flex;
+  gap: .35rem;
+  flex-wrap: wrap;
+}
+
+.typeBadge{
+  font-size: .78rem;
+  font-weight: 900;
+  padding: .18rem .5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+}
+
+.type-fire{ background: rgba(255, 92, 92, 0.18); }
+.type-flying{ background: rgba(140, 170, 255, 0.16); }
+.type-poison{ background: rgba(190, 120, 255, 0.16); }
+.type-grass{ background: rgba(90, 220, 140, 0.16); }
+.type-fighting{ background: rgba(255, 150, 90, 0.16); }
+.type-electric{ background: rgba(255, 220, 90, 0.16); }
+.type-water{ background: rgba(90, 170, 255, 0.16); }
+.type-steel{ background: rgba(200, 210, 230, 0.12); }
+.type-rock{ background: rgba(210, 185, 120, 0.14); }
+.type-dark{ background: rgba(160, 150, 150, 0.14); }
+
+.chronosMapWrap{
+  margin-top: .9rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.chronosMap{
+  width: 100%;
+  height: auto;
+  display:block;
+}
+
+.encounterColumns{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.encounterTitle{
+  font-weight: 900;
+  margin-bottom: .6rem;
+}
+
+.encounterList{
+  display:grid;
+  gap: .45rem;
+}
+
+.encounterRow{
+  display:grid;
+  grid-template-columns: 56px 1fr auto;
+  align-items:center;
+  gap: .6rem;
+  padding: .55rem .65rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.16);
+}
+
+.encounterName{
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.encounterMeta{
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: .1rem;
+  white-space: nowrap;
+}
+
+.encounterRate{
+  font-weight: 900;
+}
+
+.celebiCard{
+  display:flex;
+  gap: .75rem;
+  align-items:center;
+  padding: .75rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.16);
+}
+
+.celebiSprite{
+  width: 64px;
+  height: 64px;
+}
+
 @media (min-width: 600px){
   .projectScreensGrid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -488,6 +690,24 @@ a{ color: inherit; text-decoration: none; }
   }
   .projectTitle{
     line-height: 1.05;
+  }
+
+  .encounterRow{
+    grid-template-columns: 52px 1fr;
+    grid-auto-rows: auto;
+  }
+  .encounterMeta{
+    grid-column: 2;
+    align-items: flex-start;
+  }
+}
+
+@media (min-width: 820px){
+  .rangerRow{
+    grid-template-columns: 280px 1fr;
+  }
+  .encounterColumns{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
