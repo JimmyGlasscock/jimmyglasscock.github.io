@@ -31,13 +31,13 @@ export default function ProjectsPage() {
           {projects.map((p) => (
             <li key={p.slug} className="projectsListItem">
               <Link className="projectLink" to={`/projects/${p.slug}`}>
+                <span className="projectTitle">{p.title}</span>
                 <img
                   className="projectGif"
                   src={p.gifSrc}
                   alt={p.gifAlt}
                   loading="lazy"
                 />
-                <span className="projectTitle">{p.title}</span>
               </Link>
             </li>
           ))}
