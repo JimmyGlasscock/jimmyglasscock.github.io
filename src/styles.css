@@ -719,6 +719,39 @@ a{ color: inherit; text-decoration: none; }
   height: 200px;
 }
 
+.oakBattleCard{
+  padding: 1rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(0,0,0,0.16);
+}
+
+.oakTrainerItems{
+  margin: .65rem 0 0;
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.oakVariantGrid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .75rem;
+  margin-top: .9rem;
+}
+
+.oakVariantCard{
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  padding: .75rem;
+}
+
+.oakVariantTitle{
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
 @media (min-width: 600px){
   .projectScreensGrid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -773,6 +806,9 @@ a{ color: inherit; text-decoration: none; }
     grid-template-columns: 280px 1fr;
   }
   .encounterColumns{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .oakVariantGrid{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

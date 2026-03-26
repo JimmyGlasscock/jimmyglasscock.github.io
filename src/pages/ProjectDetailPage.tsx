@@ -142,6 +142,141 @@ const PROJECTS = [
         note: 'Awaiting you at the end of Chronos Isle is the legendary pokemon Celebi!',
         moves: ['Ancient Power', 'Future Sight', 'Baton Pass', 'Perish Song'] as const,
       },
+      oakBattle: {
+        title: 'Battle with Professor Oak!',
+        subtitle:
+          "After you've completed the Kanto Pokedex and caught all 151, Professor Oak will challenge you to a Pokemon Battle!",
+        variantNote:
+          'Professor Oak has 3 team variants in your build, based on starter path. All three Oak variants also use 4x Full Restore as trainer items.',
+        variants: [
+          {
+            name: 'Oak (Squirtle path)',
+            partyLabel: 'sParty_ProfOakSquirtle',
+            team: [
+              {
+                dex: 128,
+                name: 'Tauros',
+                level: 76,
+                moves: ['Earthquake', 'Return', 'Iron Tail', 'Swagger'] as const,
+              },
+              {
+                dex: 103,
+                name: 'Exeggutor',
+                level: 77,
+                moves: ['Giga Drain', 'Psychic', 'Sleep Powder', 'Light Screen'] as const,
+              },
+              {
+                dex: 59,
+                name: 'Arcanine',
+                level: 78,
+                moves: ['Extreme Speed', 'Flamethrower', 'Crunch', 'Iron Tail'] as const,
+              },
+              {
+                dex: 3,
+                name: 'Venusaur',
+                level: 79,
+                moves: ['Solar Beam', 'Sludge Bomb', 'Earthquake', 'Sunny Day'] as const,
+              },
+              {
+                dex: 130,
+                name: 'Gyarados',
+                level: 80,
+                moves: ['Hydro Pump', 'Dragon Dance', 'Earthquake', 'Hyper Beam'] as const,
+              },
+              {
+                dex: 149,
+                name: 'Dragonite',
+                level: 82,
+                moves: ['Outrage', 'Earthquake', 'Extreme Speed', 'Thunderbolt'] as const,
+              },
+            ],
+          },
+          {
+            name: 'Oak (Bulbasaur path)',
+            partyLabel: 'sParty_ProfOakBulbasaur',
+            team: [
+              {
+                dex: 128,
+                name: 'Tauros',
+                level: 76,
+                moves: ['Earthquake', 'Return', 'Iron Tail', 'Swagger'] as const,
+              },
+              {
+                dex: 103,
+                name: 'Exeggutor',
+                level: 77,
+                moves: ['Giga Drain', 'Psychic', 'Sleep Powder', 'Light Screen'] as const,
+              },
+              {
+                dex: 59,
+                name: 'Arcanine',
+                level: 78,
+                moves: ['Extreme Speed', 'Flamethrower', 'Crunch', 'Iron Tail'] as const,
+              },
+              {
+                dex: 6,
+                name: 'Charizard',
+                level: 79,
+                moves: ['Fire Blast', 'Dragon Claw', 'Aerial Ace', 'Earthquake'] as const,
+              },
+              {
+                dex: 130,
+                name: 'Gyarados',
+                level: 80,
+                moves: ['Hydro Pump', 'Dragon Dance', 'Earthquake', 'Hyper Beam'] as const,
+              },
+              {
+                dex: 149,
+                name: 'Dragonite',
+                level: 82,
+                moves: ['Outrage', 'Earthquake', 'Extreme Speed', 'Thunderbolt'] as const,
+              },
+            ],
+          },
+          {
+            name: 'Oak (Charmander path)',
+            partyLabel: 'sParty_ProfOakCharmander',
+            team: [
+              {
+                dex: 128,
+                name: 'Tauros',
+                level: 76,
+                moves: ['Earthquake', 'Return', 'Iron Tail', 'Swagger'] as const,
+              },
+              {
+                dex: 103,
+                name: 'Exeggutor',
+                level: 77,
+                moves: ['Giga Drain', 'Psychic', 'Sleep Powder', 'Light Screen'] as const,
+              },
+              {
+                dex: 59,
+                name: 'Arcanine',
+                level: 78,
+                moves: ['Extreme Speed', 'Flamethrower', 'Crunch', 'Iron Tail'] as const,
+              },
+              {
+                dex: 9,
+                name: 'Blastoise',
+                level: 79,
+                moves: ['Hydro Pump', 'Ice Beam', 'Earthquake', 'Mirror Coat'] as const,
+              },
+              {
+                dex: 130,
+                name: 'Gyarados',
+                level: 80,
+                moves: ['Hydro Pump', 'Dragon Dance', 'Earthquake', 'Hyper Beam'] as const,
+              },
+              {
+                dex: 149,
+                name: 'Dragonite',
+                level: 82,
+                moves: ['Outrage', 'Earthquake', 'Extreme Speed', 'Thunderbolt'] as const,
+              },
+            ],
+          },
+        ],
+      },
     },
   },
   {
@@ -407,6 +542,50 @@ export default function ProjectDetailPage() {
                       ))}
                     </ul>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="postGameBlock" aria-label="Professor Oak battle">
+              <div className="oakBattleCard">
+                <h4 className="postGameH4 postGameTitle">{project.postGameGuide.oakBattle.title}</h4>
+                <p className="p muted postGameIntro">{project.postGameGuide.oakBattle.subtitle}</p>
+                <p className="oakTrainerItems">{project.postGameGuide.oakBattle.variantNote}</p>
+
+                <div className="oakVariantGrid">
+                  {project.postGameGuide.oakBattle.variants.map((variant) => (
+                    <div key={variant.partyLabel} className="oakVariantCard">
+                      <div className="oakVariantTitle">{variant.name}</div>
+                      <div className="muted small">{variant.partyLabel}</div>
+
+                      <div className="teamList" aria-label={`${variant.name} team`}>
+                        {variant.team.map((m) => (
+                          <div key={`${variant.partyLabel}-${m.name}`} className="teamMember">
+                            <img
+                              className="pokeSprite"
+                              src={spriteUrl(m.dex)}
+                              alt={`${m.name} sprite`}
+                            />
+                            <div className="teamMeta">
+                              <div className="teamName">
+                                {m.name} <span className="muted">Lv {m.level}</span>
+                              </div>
+                              <div className="teamMoves">
+                                <div className="muted small">Moves:</div>
+                                <ul className="movesGrid" aria-label={`${m.name} moves`}>
+                                  {m.moves.map((mv) => (
+                                    <li key={mv} className="movePill">
+                                      {mv}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
