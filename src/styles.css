@@ -727,29 +727,62 @@ a{ color: inherit; text-decoration: none; }
 }
 
 .oakTrainerItems{
-  margin: .65rem 0 0;
+  margin: 0;
   color: rgba(255,255,255,0.9);
   font-weight: 600;
   line-height: 1.45;
 }
 
-.oakVariantGrid{
+.oakRow{
   display: grid;
   grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.oakVariantList{
+  display: grid;
   gap: .75rem;
   margin-top: .9rem;
 }
 
-.oakVariantCard{
+.oakVariantAccordion{
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: rgba(255,255,255,0.03);
+  overflow: hidden;
+}
+
+.oakVariantSummary{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem;
+  list-style: none;
   padding: .75rem;
+  cursor: pointer;
+}
+
+.oakVariantSummary::-webkit-details-marker{
+  display: none;
+}
+
+.oakVariantSummary::after{
+  content: '+';
+  font-weight: 900;
+  color: var(--muted);
+}
+
+.oakVariantAccordion[open] .oakVariantSummary::after{
+  content: '-';
 }
 
 .oakVariantTitle{
   font-weight: 900;
   letter-spacing: -0.01em;
+}
+
+.oakVariantAccordion .teamList{
+  padding: 0 .75rem .75rem;
 }
 
 @media (min-width: 600px){
@@ -805,10 +838,10 @@ a{ color: inherit; text-decoration: none; }
   .rangerRow{
     grid-template-columns: 280px 1fr;
   }
-  .encounterColumns{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+  .oakRow{
+    grid-template-columns: 280px 1fr;
   }
-  .oakVariantGrid{
+  .encounterColumns{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
