@@ -298,7 +298,7 @@ export default function ProjectDetailPage() {
                   {project.postGameGuide.team.map((m) => (
                     <div key={m.name} className="teamMember">
                       <img
-                        className="pokeSprite teamPokeSprite"
+                        className="pokeSprite celebiSprite"
                         src={spriteUrl(m.dex)}
                         alt={`${m.name} sprite`}
                       />
