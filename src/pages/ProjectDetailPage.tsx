@@ -328,16 +328,12 @@ export default function ProjectDetailPage() {
             <div className="postGameBlock">
               <p className="p muted">{project.postGameGuide.rewardText}</p>
 
-              <div className="chronosMapWrap" aria-label="Chronos Isle map placeholder">
-                {project.postGameGuide.chronosIsleMapSrc ? (
-                  <img
-                    className="chronosMap"
-                    src={project.postGameGuide.chronosIsleMapSrc}
-                    alt="Chronos Isle map"
-                  />
-                ) : (
-                  <div className="assetPlaceholder">[Map of Chronos Isle - to be provided]</div>
-                )}
+              <div className="chronosMapWrap" aria-label="Chronos Isle map">
+                <img
+                  className="chronosMap"
+                  src={project.postGameGuide.chronosIsleMapSrc}
+                  alt="Chronos Isle map"
+                />
               </div>
             </div>
 

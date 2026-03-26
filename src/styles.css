@@ -640,7 +640,7 @@ a{ color: inherit; text-decoration: none; }
   display:grid;
   grid-template-columns: 56px 1fr auto;
   align-items:center;
-  gap: .6rem;
+  gap: 1rem;
   padding: .55rem .65rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -668,6 +668,8 @@ a{ color: inherit; text-decoration: none; }
   display:flex;
   gap: .75rem;
   align-items:center;
+  justify-content: center;
+  text-align: center;
   padding: .75rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -675,8 +677,8 @@ a{ color: inherit; text-decoration: none; }
 }
 
 .celebiSprite{
-  width: 64px;
-  height: 64px;
+  width: 200px;
+  height: 200px;
 }
 
 @media (min-width: 600px){
