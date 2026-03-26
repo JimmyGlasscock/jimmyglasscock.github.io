@@ -146,7 +146,7 @@ const PROJECTS = [
         title: 'Battle with Professor Oak!',
         subtitle:
           "After you've completed the Kanto Pokedex and caught all 151, Professor Oak will challenge you to a Pokemon Battle!",
-        oakSpriteSrc: '/photos/firered/upscaled/oak-sprite.png',
+        oakSpriteSrc: '/photos/firered/oak-sprite.png',
         variantNote:
           'Professor Oak has 3 team variants in your build, based on starter path. All three Oak variants also use 4x Full Restore as trainer items.',
         variants: [
@@ -583,7 +583,6 @@ export default function ProjectDetailPage() {
                         >
                           <summary className="oakVariantSummary">
                             <span className="oakVariantTitle">{variant.name}</span>
-                            <span className="muted small">{variant.partyLabel}</span>
                           </summary>
 
                           <div className="teamList" aria-label={`${variant.name} team`}>
