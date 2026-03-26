@@ -562,7 +562,7 @@ export default function ProjectDetailPage() {
                   <div className="rangerSpriteWrap" aria-label="Professor Oak sprite">
                     {project.postGameGuide.oakBattle.oakSpriteSrc ? (
                       <img
-                        className="rangerSprite"
+                        className="rangerSprite oakSprite"
                         src={project.postGameGuide.oakBattle.oakSpriteSrc}
                         alt="Professor Oak sprite"
                       />
