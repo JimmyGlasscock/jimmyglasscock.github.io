@@ -17,6 +17,11 @@ const items = [
     input: path.join(inputDir, 'ChronosMeadow.png'),
     output: path.join(outputDir, 'ChronosMeadow.png'),
   },
+  {
+    name: 'jimmy-sprite',
+    input: path.join(inputDir, 'jimmy-sprite.png'),
+    output: path.join(outputDir, 'jimmy-sprite.png'),
+  },
 ]
 
 async function main() {

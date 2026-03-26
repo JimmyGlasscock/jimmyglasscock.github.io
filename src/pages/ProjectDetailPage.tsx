@@ -65,8 +65,7 @@ const PROJECTS = [
     otherInfo: ['Other info coming soon.'],
     postGameGuide: {
       // FireRed/LeafGreen-style Ranger trainer sprite
-      rangerJimmySpriteSrc:
-        'https://raw.githubusercontent.com/pret/pokefirered/master/graphics/trainers/front_pics/ranger_m.png',
+      rangerJimmySpriteSrc: '/photos/firered/upscaled/jimmy-sprite.png',
       chronosIsleMapSrc: '/photos/firered/upscaled/ChronosMeadow.png',
       team: [
         {
@@ -315,8 +314,14 @@ export default function ProjectDetailPage() {
                           </div>
                         </div>
                         <div className="teamMoves">
-                          <span className="muted small">Moves:</span>{' '}
-                          {m.moves.join(', ')}
+                          <div className="muted small">Moves:</div>
+                          <ul className="movesGrid" aria-label={`${m.name} moves`}>
+                            {m.moves.map((mv) => (
+                              <li key={mv} className="movePill">
+                                {mv}
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
                     </div>
@@ -388,7 +393,6 @@ export default function ProjectDetailPage() {
                     {project.postGameGuide.celebi.name}{' '}
                     <span className="muted">Level {project.postGameGuide.celebi.level}</span>
                   </div>
-                  <div className="muted small">[Graphic similar to Serebii.net]</div>
                 </div>
               </div>
             </div>
