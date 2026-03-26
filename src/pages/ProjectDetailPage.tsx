@@ -23,7 +23,7 @@ const PROJECTS = [
     title: 'Pokemon FireRed & LeafGreen Enhancements',
     videoUrl: 'https://www.youtube.com/embed/74BKM28FJi4?si=BLdUzGXmGytLyqKu',
     downloadUrl: 'https://drive.google.com/drive/folders/1-I24e08BpZ1-sQVUPM-5jwPxR16vakB0?usp=drive_link',
-    downloadText: 'Download files',
+    downloadText: 'Download Patch',
     screenshots: [
       { src: '/photos/firered/upscaled/1.png', alt: 'FireRed/LeafGreen screenshot 1' },
       { src: '/photos/firered/upscaled/2.png', alt: 'FireRed/LeafGreen screenshot 2' },
