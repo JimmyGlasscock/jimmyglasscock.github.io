@@ -35,6 +35,55 @@ a{ color: inherit; text-decoration: none; }
 
 .page{ min-height:100%; }
 
+/* =========================================================
+   NAVBAR (shown on every route except "/")
+   ========================================================= */
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--border);
+  background: rgba(11, 11, 15, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.navbarInner{
+  display:flex;
+  justify-content: flex-end;
+  align-items:center;
+  padding: 0.75rem 0;
+}
+
+.navLinks{
+  display:flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.navLink{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 0.55rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.04);
+  font-weight: 700;
+  transition: background .15s ease, transform .15s ease, border-color .15s ease;
+}
+
+.navLink:hover{
+  background: rgba(255,255,255,0.09);
+  transform: translateY(-1px);
+  border-color: rgba(255,255,255,0.22);
+}
+
+.navLink[aria-current="page"]{
+  background: linear-gradient(135deg, rgba(140,120,255,0.60), rgba(0,200,255,0.28));
+  border-color: rgba(255,255,255,0.25);
+}
+
 .container{
   width: min(var(--max), calc(100% - 2rem));
   margin: 0 auto;
@@ -252,6 +301,29 @@ a{ color: inherit; text-decoration: none; }
   display:grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+}
+
+.pageContent{
+  padding-top: 1.1rem;
+}
+
+.projectsCard{
+  margin-top: 1rem;
+}
+
+.projectsList{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.projectsListItem{
+  padding: 0.9rem 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.projectsListItem:first-child{
+  border-top: 0;
 }
 
 /* =========================================================

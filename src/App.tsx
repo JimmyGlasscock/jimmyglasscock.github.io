@@ -1,4 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import ProjectsPage from './pages/ProjectsPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 const EMAIL = 'jamesglasscock99@gmail.com'
 const INSTAGRAM_URL = 'https://instagram.com/jimmyglasscock'
@@ -47,7 +51,7 @@ function usePrefersReducedMotion() {
   return reduced
 }
 
-export default function App() {
+function HomePage() {
   const reducedMotion = usePrefersReducedMotion()
   const videoRef = useRef<HTMLVideoElement | null>(null)
 
@@ -295,5 +299,19 @@ export default function App() {
         </section>
       </main>
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/projects/" element={<ProjectsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </>
   )
 }
