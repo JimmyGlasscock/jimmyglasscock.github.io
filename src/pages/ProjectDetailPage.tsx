@@ -333,7 +333,7 @@ export default function ProjectDetailPage() {
             </div>
 
             <div className="postGameBlock">
-              <h4 className="postGameH4 postGameTitle">{project.postGameGuide.rewardText}</h4>
+              <p className="postGameRewardText">{project.postGameGuide.rewardText}</p>
 
               <div className="chronosMapWrap" aria-label="Chronos Isle map">
                 <img

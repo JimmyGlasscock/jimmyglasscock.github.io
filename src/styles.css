@@ -485,6 +485,15 @@ a{ color: inherit; text-decoration: none; }
   margin-bottom: 1rem;
 }
 
+.postGameRewardText{
+  margin: 0;
+  color: rgba(255,255,255,0.96);
+  font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+}
+
 .assetPlaceholder{
   width: 100%;
   min-height: 160px;
@@ -556,8 +565,8 @@ a{ color: inherit; text-decoration: none; }
 }
 
 .teamPokeSprite{
-  width: 130px;
-  height: 130px;
+  width: 200px;
+  height: 200px;
 }
 
 .teamMeta{
