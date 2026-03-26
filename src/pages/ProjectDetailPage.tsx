@@ -225,7 +225,6 @@ export default function ProjectDetailPage() {
       <section className="section" aria-label="Project screenshots">
         <div className="sectionHeader">
           <h3 className="h3">Screenshots</h3>
-          <p className="muted small">Add four screenshots for this project.</p>
         </div>
 
         <div className="card projectScreensCard">
