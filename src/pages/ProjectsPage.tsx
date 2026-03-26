@@ -1,8 +1,19 @@
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 
 const PROJECTS = [
-  'Pokemon FireRed & LeafGreen Enhancements',
-  'Pokemon Ruby & Sapphire Enhancements (and Emerald)',
+  {
+    slug: 'fire-red-leaf-green-enhancements',
+    title: 'Pokemon FireRed & LeafGreen Enhancements',
+    gifSrc: '/media/red.gif',
+    gifAlt: 'Red character GIF',
+  },
+  {
+    slug: 'ruby-sapphire-enhancements',
+    title: 'Pokemon Ruby & Sapphire Enhancements (and Emerald)',
+    gifSrc: '/media/brendan.gif',
+    gifAlt: 'Brendan character GIF',
+  },
 ] as const
 
 export default function ProjectsPage() {
@@ -18,8 +29,16 @@ export default function ProjectsPage() {
       <section className="card projectsCard" aria-label="Project list">
         <ul className="projectsList">
           {projects.map((p) => (
-            <li key={p} className="projectsListItem">
-              {p}
+            <li key={p.slug} className="projectsListItem">
+              <Link className="projectLink" to={`/projects/${p.slug}`}>
+                <img
+                  className="projectGif"
+                  src={p.gifSrc}
+                  alt={p.gifAlt}
+                  loading="lazy"
+                />
+                <span className="projectTitle">{p.title}</span>
+              </Link>
             </li>
           ))}
         </ul>

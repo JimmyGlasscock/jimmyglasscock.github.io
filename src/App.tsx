@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
+import ProjectDetailPage from './pages/ProjectDetailPage'
 
 const EMAIL = 'jamesglasscock99@gmail.com'
 const INSTAGRAM_URL = 'https://instagram.com/jimmyglasscock'
@@ -310,6 +311,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/" element={<ProjectsPage />} />
+        <Route path="/projects/:projectSlug" element={<ProjectDetailPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
