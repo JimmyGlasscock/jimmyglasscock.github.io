@@ -38,8 +38,7 @@ const PROJECTS = [
       'Repel expired, use another?',
       'Item use movies remove (evolution stones, rare candies, etc)',
       'Update whiteout to be like RSE (no tutorial, spawn in front of Pokemon Center)',
-      'Add in Professor Oak battle if Kanto Dex complete',
-      'https://gamefaqs.gamespot.com/gameboy/367023-pokemon-red-version/faqs/64175/battle-professor-oak',
+      'Added in Professor Oak battle when you catch all 151 Kanto Pokemon',
       'L & R move pages in the box',
       'Added a Jimmy battle at the memorial pillar (and a special surprise if you beat me)',
       'TMs are infinite',
@@ -112,8 +111,13 @@ export default function ProjectDetailPage() {
         </div>
 
         {project.downloadUrl ? (
-          <div className="ctaRow">
-            <a className="btn primary" href={project.downloadUrl} target="_blank" rel="noreferrer">
+          <div className="projectDownloadRow ctaRow">
+            <a
+              className="btn primary projectDownloadButton"
+              href={project.downloadUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
               {project.downloadText ?? 'Download files'}
             </a>
           </div>
