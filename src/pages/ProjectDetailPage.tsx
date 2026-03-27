@@ -89,13 +89,13 @@ const PROJECTS = [
             { dex: 204, name: 'Pineco', location: 'Cape Brink' },
             { dex: 205, name: 'Forretress', location: 'Cape Brink' },
             { dex: 207, name: 'Gligar', location: 'Cape Brink' },
-            { dex: 209, name: 'Snubbull', location: 'Bond Bridge' },
-            { dex: 210, name: 'Granbull', location: 'Bond Bridge' },
           ],
         },
         {
           island: 'Three Island',
           entries: [
+            { dex: 209, name: 'Snubbull', location: 'Bond Bridge' },
+            { dex: 210, name: 'Granbull', location: 'Bond Bridge' },
             { dex: 163, name: 'Hoothoot', location: 'Berry Forest' },
             { dex: 234, name: 'Stantler', location: 'Berry Forest' },
           ],
