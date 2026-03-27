@@ -284,8 +284,9 @@ const PROJECTS = [
     slug: 'ruby-sapphire-enhancements',
     title: 'Pokemon Ruby & Sapphire Enhancements (and Emerald)',
     videoUrl: 'https://www.youtube.com/embed/6AGnunoqc6o?si=wB1VN3RRYdnIJJBj',
-    downloadUrl: undefined,
-    downloadText: undefined,
+    downloadUrl:
+      'https://drive.google.com/drive/folders/1pDzdw5JfiSyVa9Ir-x1nSXDDRB6bODPy?usp=drive_link',
+    downloadText: 'Download Patch',
     screenshots: [
       { src: '/photos/rubysapphire/1.png', alt: 'Ruby/Sapphire screenshot 1' },
       { src: '/photos/rubysapphire/2.png', alt: 'Ruby/Sapphire screenshot 2' },
