@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
@@ -296,6 +296,11 @@ function HomePage() {
                 Instagram
               </a>
             </div>
+          </div>
+          <div className="bookingProjectsWrap">
+            <Link className="btn ghost" to="/projects">
+              Projects
+            </Link>
           </div>
         </section>
       </main>

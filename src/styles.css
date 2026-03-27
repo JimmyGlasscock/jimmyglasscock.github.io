@@ -980,6 +980,12 @@ a{ color: inherit; text-decoration: none; }
   justify-content: center;
 }
 
+.bookingProjectsWrap{
+  margin-top: .9rem;
+  display: flex;
+  justify-content: center;
+}
+
 /* =========================================================
    DESKTOP BREAKPOINT
    ========================================================= */
