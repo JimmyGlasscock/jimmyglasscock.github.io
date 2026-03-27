@@ -318,6 +318,8 @@ const PROJECTS = [
       'Font from emerald',
       'Running shoes work everywhere',
       'In the pokemon party menu, all field moves highlighted in blue',
+      'Feebas is a 10% encounter no matter what on route 119',
+      'Feebas now evolves via water stone',
     ],
     otherInfo: ['Add any notes, credits, or links here.'],
     postGameGuide: undefined,
