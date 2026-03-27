@@ -67,6 +67,64 @@ const PROJECTS = [
       // FireRed/LeafGreen-style Ranger trainer sprite
       rangerJimmySpriteSrc: '/photos/firered/upscaled/jimmy-sprite.png',
       chronosIsleMapSrc: '/photos/firered/upscaled/ChronosMeadow.png',
+      johtoLocations: [
+        {
+          island: 'One Island',
+          entries: [
+            { dex: 170, name: 'Chinchou', location: 'Treasure Beach', surfing: true },
+            { dex: 171, name: 'Lanturn', location: 'Treasure Beach', surfing: true },
+            { dex: 163, name: 'Hoothoot', location: 'Treasure Beach' },
+            { dex: 222, name: 'Corsola', location: 'Kindle Road', surfing: true },
+            { dex: 179, name: 'Mareep', location: 'Kindle Road' },
+            { dex: 185, name: 'Sudowoodo', location: 'Kindle Road' },
+            { dex: 191, name: 'Sunkern', location: 'Kindle Road' },
+            { dex: 203, name: 'Girafarig', location: 'Mt. Ember exterior' },
+            { dex: 228, name: 'Houndour', location: 'Mt. Ember' },
+            { dex: 229, name: 'Houndoom', location: 'Mt. Ember exterior' },
+          ],
+        },
+        {
+          island: 'Two Island',
+          entries: [
+            { dex: 204, name: 'Pineco', location: 'Cape Brink' },
+            { dex: 205, name: 'Forretress', location: 'Cape Brink' },
+            { dex: 207, name: 'Gligar', location: 'Cape Brink' },
+            { dex: 209, name: 'Snubbull', location: 'Bond Bridge' },
+            { dex: 210, name: 'Granbull', location: 'Bond Bridge' },
+          ],
+        },
+        {
+          island: 'Three Island',
+          entries: [
+            { dex: 163, name: 'Hoothoot', location: 'Berry Forest' },
+            { dex: 234, name: 'Stantler', location: 'Berry Forest' },
+          ],
+        },
+        {
+          island: 'Five Island',
+          entries: [
+            { dex: 190, name: 'Aipom', location: 'Five Isle Meadow' },
+            { dex: 213, name: 'Shuckle', location: 'Five Isle Meadow' },
+            { dex: 235, name: 'Smeargle', location: 'Five Isle Meadow' },
+            { dex: 241, name: 'Miltank', location: 'Five Isle Meadow' },
+          ],
+        },
+        {
+          island: 'Six Island',
+          entries: [
+            { dex: 216, name: 'Teddiursa', location: 'Water Path' },
+            { dex: 217, name: 'Ursaring', location: 'Water Path' },
+          ],
+        },
+        {
+          island: 'Seven Island',
+          entries: [
+            { dex: 180, name: 'Flaaffy', location: 'Canyon Entrance' },
+            { dex: 241, name: 'Miltank', location: 'Canyon Entrance' },
+            { dex: 185, name: 'Sudowoodo', location: 'Canyon Entrance' },
+          ],
+        },
+      ],
       team: [
         {
           dex: 157,
@@ -433,6 +491,42 @@ export default function ProjectDetailPage() {
           <div className="sectionHeader">
             <h4 className="postGameH4 postGameTitle">New Post Game updates</h4>
           </div>
+
+          <div className="card postGameCard" aria-label="New Johto Pokemon Locations">
+            <div className="postGameBlock">
+              <h4 className="postGameH4 postGameTitle">New Johto Pokemon Locations</h4>
+              <div className="johtoIslandGrid">
+                {project.postGameGuide.johtoLocations.map((block) => (
+                  <div key={block.island} className="johtoIslandBlock">
+                    <div className="encounterTitle">{block.island}</div>
+                    <div className="encounterList">
+                      {block.entries.map((e) => (
+                        <div
+                          key={`${block.island}-${e.name}-${e.location}-${e.dex}`}
+                          className="encounterRow johtoLocationRow"
+                        >
+                          <img
+                            className="pokeSprite"
+                            src={spriteUrl(e.dex)}
+                            alt={`${e.name} sprite`}
+                          />
+                          <div className="johtoLocationMeta">
+                            <div className="encounterName">{e.name}</div>
+                            <div className="muted small">
+                              {e.location}
+                              {'surfing' in e && e.surfing ? ' (surfing)' : ''}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <br />
 
           <div className="card postGameCard">
             <div className="postGameBlock">
