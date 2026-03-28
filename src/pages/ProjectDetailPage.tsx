@@ -386,6 +386,14 @@ const PROJECTS = [
       mediaSrc: '/media/252.gif',
       mediaAlt: 'Treecko animated sprite from Emerald',
     },
+    marineTerraCave: {
+      title: 'Marine Cave & Terra Cave',
+      body: 'After defeating the elite four, the man in the weather institute will tell you about some strange weather patterns in the Hoenn region. Investigating will lead you to Marine Cave in Ruby, and Terra Cave in Sapphire! Bring some Ultra Balls!',
+      screenshots: [
+        { src: '', alt: 'Marine Cave screenshot' },
+        { src: '', alt: 'Terra Cave screenshot' },
+      ],
+    },
     otherInfo: ['Add any notes, credits, or links here.'],
     postGameGuide: undefined,
   },
@@ -495,7 +503,7 @@ export default function ProjectDetailPage() {
       {'animationsFromEmerald' in project && project.animationsFromEmerald ? (
         <section className="section" aria-label={project.animationsFromEmerald.title}>
           <div className="sectionHeader">
-            <h3 className="h3">{project.animationsFromEmerald.title}</h3>
+            <h3 className="h3 projectFeatureSectionTitle">{project.animationsFromEmerald.title}</h3>
           </div>
 
           <div className="card projectAnimationsCard">
@@ -507,6 +515,34 @@ export default function ProjectDetailPage() {
                   alt={project.animationsFromEmerald.mediaAlt}
                   className="projectAnimationsGif"
                 />
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {'marineTerraCave' in project && project.marineTerraCave ? (
+        <section className="section" aria-label={project.marineTerraCave.title}>
+          <div className="sectionHeader">
+            <h3 className="h3 projectFeatureSectionTitle">{project.marineTerraCave.title}</h3>
+          </div>
+
+          <div className="card projectAnimationsCard">
+            <div className="projectAnimationsRow">
+              <p className="projectAnimationsSubtitle">{project.marineTerraCave.body}</p>
+              <div className="projectMarineScreenshots">
+                {project.marineTerraCave.screenshots.map((s, idx) => {
+                  const hasSrc = Boolean(s.src)
+                  return (
+                    <div key={`${idx}-${s.alt}`} className="projectScreenshotItem projectMarineScreenshotItem">
+                      {hasSrc ? (
+                        <img className="projectScreenshotImg" src={s.src} alt={s.alt} />
+                      ) : (
+                        <div className="projectScreenshotPlaceholder">{`${s.alt} (add image)`}</div>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
           </div>
