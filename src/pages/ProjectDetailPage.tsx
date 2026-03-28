@@ -321,6 +321,13 @@ const PROJECTS = [
       'Feebas is a 10% encounter no matter what on route 119',
       'Feebas now evolves via water stone',
     ],
+    animationsFromEmerald: {
+      title: 'Animations from Emerald',
+      subtitle:
+        'Pokemon animations have been ported from Emerald Version to give Ruby and Sapphire the love they deserve',
+      mediaSrc: '/media/252.gif',
+      mediaAlt: 'Treecko animated sprite from Emerald',
+    },
     otherInfo: ['Add any notes, credits, or links here.'],
     postGameGuide: undefined,
   },
@@ -426,6 +433,27 @@ export default function ProjectDetailPage() {
           </ul>
         </div>
       </section>
+
+      {'animationsFromEmerald' in project && project.animationsFromEmerald ? (
+        <section className="section" aria-label={project.animationsFromEmerald.title}>
+          <div className="sectionHeader">
+            <h3 className="h3">{project.animationsFromEmerald.title}</h3>
+          </div>
+
+          <div className="card projectAnimationsCard">
+            <div className="projectAnimationsRow">
+              <p className="projectAnimationsSubtitle">{project.animationsFromEmerald.subtitle}</p>
+              <div className="projectAnimationsMedia">
+                <img
+                  src={project.animationsFromEmerald.mediaSrc}
+                  alt={project.animationsFromEmerald.mediaAlt}
+                  className="projectAnimationsGif"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       {/* POST GAME GUIDE (FireRed / LeafGreen) */}
       {project.postGameGuide ? (
