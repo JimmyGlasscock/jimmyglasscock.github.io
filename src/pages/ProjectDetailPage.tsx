@@ -62,7 +62,6 @@ const PROJECTS = [
       'FireRed / LeafGreen version toggle for version exclusives',
       'Modern Exp Share toggle',
     ],
-    otherInfo: ['Other info coming soon.'],
     postGameGuide: {
       // FireRed/LeafGreen-style Ranger trainer sprite
       rangerJimmySpriteSrc: '/photos/firered/upscaled/jimmy-sprite.png',
@@ -394,7 +393,6 @@ const PROJECTS = [
         { src: '/photos/rubysapphire/marine.png', alt: 'Marine Cave screenshot' },
       ],
     },
-    otherInfo: ['Add any notes, credits, or links here.'],
     postGameGuide: undefined,
   },
 ] as const
@@ -801,27 +799,21 @@ export default function ProjectDetailPage() {
               </div>
             </div>
         </section>
-      ) : (
-        <section className="section" aria-label="Project other info">
-          <div className="sectionHeader">
-            <h3 className="h3">Other info</h3>
-          </div>
+      ) : null}
 
-          <div className="card">
-            {project.otherInfo.map((t, idx) => (
-              <p key={idx} className="p muted">
-                {t}
-              </p>
-            ))}
-
-            <div className="ctaRow">
-              <Link className="btn ghost" to="/projects">
-                Back to projects
-              </Link>
-            </div>
+      <section className="section" aria-label="Bug reports and navigation">
+        <div className="card projectFooterCard">
+          <p className="projectFooterNote">
+            Please report any bugs / issues to{' '}
+            <a href="mailto:jamesglasscock99@gmail.com">jamesglasscock99@gmail.com</a>
+          </p>
+          <div className="ctaRow">
+            <Link className="btn ghost" to="/projects">
+              Back to projects
+            </Link>
           </div>
-        </section>
-      )}
+        </div>
+      </section>
     </main>
   )
 }

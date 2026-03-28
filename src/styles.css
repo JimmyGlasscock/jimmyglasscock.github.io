@@ -543,8 +543,25 @@ a{ color: inherit; text-decoration: none; }
   }
 }
 
-.projectOtherInfo p{
-  margin: .75rem 0 0;
+.projectFooterCard{
+  padding: 1rem 1.15rem 1.15rem;
+}
+
+.projectFooterNote{
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.projectFooterNote a{
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.projectFooterNote a:hover{
+  color: var(--text);
 }
 
 .postGameCard{
