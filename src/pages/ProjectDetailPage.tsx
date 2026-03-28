@@ -382,7 +382,7 @@ const PROJECTS = [
     animationsFromEmerald: {
       title: 'Animations from Emerald',
       subtitle:
-        'Pokemon animations have been ported from Emerald Version to give Ruby and Sapphire the love they deserve',
+        'Pokemon animations have been ported from Emerald Version to give Ruby and Sapphire the love they deserve.',
       mediaSrc: '/media/252.gif',
       mediaAlt: 'Treecko animated sprite from Emerald',
     },
