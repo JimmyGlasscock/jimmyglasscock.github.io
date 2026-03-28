@@ -20,7 +20,7 @@ type PokeType =
 const PROJECTS = [
   {
     slug: 'fire-red-leaf-green-enhancements',
-    title: 'Pokemon FireRed & LeafGreen Enhancements',
+    title: 'Pokémon FireRed & LeafGreen Enhancements',
     videoUrl: 'https://www.youtube.com/embed/74BKM28FJi4?si=BLdUzGXmGytLyqKu',
     downloadUrl: 'https://drive.google.com/drive/folders/1-I24e08BpZ1-sQVUPM-5jwPxR16vakB0?usp=drive_link',
     downloadText: 'Download Patch',
@@ -339,7 +339,7 @@ const PROJECTS = [
   },
   {
     slug: 'ruby-sapphire-enhancements',
-    title: 'Pokemon Ruby & Sapphire Enhancements (and Emerald)',
+    title: 'Pokémon Ruby & Sapphire Enhancements (and Emerald)',
     videoUrl: 'https://www.youtube.com/embed/6AGnunoqc6o?si=wB1VN3RRYdnIJJBj',
     downloadUrl:
       'https://drive.google.com/drive/folders/1pDzdw5JfiSyVa9Ir-x1nSXDDRB6bODPy?usp=drive_link',
@@ -801,17 +801,17 @@ export default function ProjectDetailPage() {
         </section>
       ) : null}
 
-      <section className="section" aria-label="Bug reports and navigation">
+      <section className="section projectFooterSection" aria-label="Bug reports and navigation">
         <div className="card projectFooterCard">
           <p className="projectFooterNote">
             Please report any bugs / issues to{' '}
             <a href="mailto:jamesglasscock99@gmail.com">jamesglasscock99@gmail.com</a>
           </p>
-          <div className="ctaRow">
-            <Link className="btn ghost" to="/projects">
-              Back to projects
-            </Link>
-          </div>
+        </div>
+        <div className="ctaRow projectFooterCta">
+          <Link className="btn ghost" to="/projects">
+            Back to projects
+          </Link>
         </div>
       </section>
     </main>

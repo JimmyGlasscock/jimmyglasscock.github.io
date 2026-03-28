@@ -381,6 +381,11 @@ a{ color: inherit; text-decoration: none; }
   text-shadow: 0 10px 25px rgba(0,0,0,0.45);
 }
 
+.projectTitle .projectTitleNote{
+  font-style: italic;
+  font-weight: 300;
+}
+
 .projectDetailTitle{
   font-family: 'Roboto', system-ui, -apple-system, Segoe UI, Helvetica, Arial;
   font-weight: 900;
@@ -543,15 +548,30 @@ a{ color: inherit; text-decoration: none; }
   }
 }
 
+.projectFooterSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .projectFooterCard{
-  padding: 1rem 1.15rem 1.15rem;
+  padding: 1rem 1.15rem;
+  width: 100%;
+  max-width: 36rem;
+  text-align: center;
 }
 
 .projectFooterNote{
-  margin: 0 0 1rem;
+  margin: 0;
   font-size: 0.875rem;
   color: var(--muted);
   line-height: 1.55;
+  text-align: center;
+}
+
+.projectFooterCta{
+  margin-top: 1rem;
+  margin-bottom: 0;
 }
 
 .projectFooterNote a{

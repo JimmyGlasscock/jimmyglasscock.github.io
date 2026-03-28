@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom'
 const PROJECTS = [
   {
     slug: 'fire-red-leaf-green-enhancements',
-    title: 'Pokemon FireRed & LeafGreen Enhancements',
+    title: 'Pokémon FireRed & LeafGreen Enhancements',
     gifSrc: '/media/red.gif',
     gifAlt: 'Red character GIF',
   },
   {
     slug: 'ruby-sapphire-enhancements',
-    title: 'Pokemon Ruby & Sapphire Enhancements (and Emerald)',
+    title: 'Pokémon Ruby & Sapphire Enhancements',
+    titleNote: '(and Emerald)',
     gifSrc: '/media/brendan.gif',
     gifAlt: 'Brendan character GIF',
   },
@@ -30,7 +31,12 @@ export default function ProjectsPage() {
           {projects.map((p) => (
             <li key={p.slug} className="projectsListItem">
               <Link className="projectLink" to={`/projects/${p.slug}`}>
-                <span className="projectTitle">{p.title}</span>
+                <span className="projectTitle">
+                  {p.title}
+                  {'titleNote' in p && p.titleNote ? (
+                    <span className="projectTitleNote"> {p.titleNote}</span>
+                  ) : null}
+                </span>
                 <img
                   className="projectGif"
                   src={p.gifSrc}
