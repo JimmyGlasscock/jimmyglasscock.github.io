@@ -169,7 +169,7 @@ const PROJECTS = [
         },
       ],
       rewardText:
-        'Upon beating Jimmy, he will reward you with the Chronos Ticket, which will give you access to Chronos Isle. Chronos Isle contains many trainers waiting to battle, and a whole slew of pokemon from the hoenn region!',
+        'Upon beating Jimmy, he will reward you with the Chronos Ticket, which will give you access to Chronos Isle. Chronos Isle contains many trainers waiting to battle, and a whole slew of pokemon from the Hoenn region!',
       encounters: {
         grass: [
           { dex: 290, name: 'Nincada', rate: '30%', levels: 'Lv 29–55' },
