@@ -390,8 +390,8 @@ const PROJECTS = [
       title: 'Marine Cave & Terra Cave',
       body: 'After defeating the elite four, the man in the weather institute will tell you about some strange weather patterns in the Hoenn region. Investigating will lead you to Marine Cave in Ruby, and Terra Cave in Sapphire! Bring some Ultra Balls!',
       screenshots: [
-        { src: '', alt: 'Marine Cave screenshot' },
-        { src: '', alt: 'Terra Cave screenshot' },
+        { src: '/photos/rubysapphire/marine.png', alt: 'Marine Cave screenshot' },
+        { src: '/photos/rubysapphire/terra.png', alt: 'Terra Cave screenshot' },
       ],
     },
     otherInfo: ['Add any notes, credits, or links here.'],
