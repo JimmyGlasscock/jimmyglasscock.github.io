@@ -381,9 +381,14 @@ a{ color: inherit; text-decoration: none; }
   text-shadow: 0 10px 25px rgba(0,0,0,0.45);
 }
 
-.projectTitle .projectTitleNote{
+.projectTitle .projectTitleNote,
+.projectDetailTitle .projectTitleNote{
   font-style: italic;
   font-weight: 300;
+}
+
+.projectDetailTitle .projectTitleNote{
+  font-size: 0.9em;
 }
 
 .projectDetailTitle{

@@ -339,7 +339,8 @@ const PROJECTS = [
   },
   {
     slug: 'ruby-sapphire-enhancements',
-    title: 'Pokémon Ruby & Sapphire Enhancements (and Emerald)',
+    title: 'Pokémon Ruby & Sapphire Enhancements',
+    titleNote: '(and Emerald)',
     videoUrl: 'https://www.youtube.com/embed/6AGnunoqc6o?si=wB1VN3RRYdnIJJBj',
     downloadUrl:
       'https://drive.google.com/drive/folders/1pDzdw5JfiSyVa9Ir-x1nSXDDRB6bODPy?usp=drive_link',
@@ -424,7 +425,12 @@ export default function ProjectDetailPage() {
   return (
     <main className="container pageContent">
       <header className="sectionHeader" aria-label="Project details header">
-        <h2 className="projectDetailTitle">{project.title}</h2>
+        <h2 className="projectDetailTitle">
+          {project.title}
+          {'titleNote' in project && project.titleNote ? (
+            <span className="projectTitleNote"> {project.titleNote}</span>
+          ) : null}
+        </h2>
       </header>
 
       {/* VIDEO */}
@@ -433,7 +439,11 @@ export default function ProjectDetailPage() {
           <div className="ratio16x9 ratioProjectVideo">
             <iframe
               src={project.videoUrl}
-              title={project.title}
+              title={
+                'titleNote' in project && project.titleNote
+                  ? `${project.title} ${project.titleNote}`
+                  : project.title
+              }
               loading="eager"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
