@@ -8,9 +8,22 @@ import ProjectDetailPage from './pages/ProjectDetailPage'
 const EMAIL = 'jamesglasscock99@gmail.com'
 const INSTAGRAM_URL = 'https://instagram.com/jimmyglasscock'
 
+/*
+
+//Don't Tell Tape - September 2025
+
 const FEATURED_TAPE = {
   title: 'Featured Tape',
   url: 'https://www.youtube.com/embed/vOGIRbYo0IA',
+  note: 'This is the one to watch.',
+}
+*/
+
+//Wiseguys Tape - October 2025
+
+const FEATURED_TAPE = {
+  title: 'Featured Tape',
+  url: 'https://www.youtube.com/embed/Y6A1Pdjo1So',
   note: 'This is the one to watch.',
 }
 

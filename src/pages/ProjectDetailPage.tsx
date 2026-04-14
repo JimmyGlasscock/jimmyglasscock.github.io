@@ -70,8 +70,8 @@ const PROJECTS = [
         {
           island: 'One Island',
           entries: [
-            { dex: 170, name: 'Chinchou', location: 'Treasure Beach', surfing: true },
-            { dex: 171, name: 'Lanturn', location: 'Treasure Beach', surfing: true },
+            { dex: 170, name: 'Chinchou', location: 'One Island Ocean', surfing: true },
+            { dex: 171, name: 'Lanturn', location: 'One Island Ocean', surfing: true },
             { dex: 163, name: 'Hoothoot', location: 'Treasure Beach' },
             { dex: 222, name: 'Corsola', location: 'Kindle Road', surfing: true },
             { dex: 179, name: 'Mareep', location: 'Kindle Road' },
