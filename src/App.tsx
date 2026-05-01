@@ -20,10 +20,19 @@ const FEATURED_TAPE = {
 */
 
 //Wiseguys Tape - October 2025
-
+/*
 const FEATURED_TAPE = {
   title: 'Featured Tape',
   url: 'https://www.youtube.com/embed/Y6A1Pdjo1So',
+  note: 'This is the one to watch.',
+}
+*/
+
+//Wiseguys Tape - April 2026
+
+const FEATURED_TAPE = {
+  title: 'Featured Tape',
+  url: 'https://www.youtube.com/embed/l8nfLOJkOWs',
   note: 'This is the one to watch.',
 }
 
@@ -145,7 +154,7 @@ function HomePage() {
                 alt="Jimmy Glasscock YouTube"
               />
               <div>
-                <div className="statTop">56K+</div>
+                <div className="statTop">66K+</div>
                 <div className="statBottom">YouTube subscribers</div>
               </div>
             </a>
