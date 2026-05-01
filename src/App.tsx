@@ -192,7 +192,7 @@ function HomePage() {
               <strong>Jimmy Glasscock</strong> is a Stand Up Comedian who quickly made his mark on the Salt Lake City comedy scene and lost his virginity at the ripe age of 24. For him, no topic is off limits - the weather, traffic, airline food, you name it.
             </p>
             <p className="p">
-              Jimmy has built a fast-growing online audience with <strong>56,000+ YouTube subscribers</strong> and
+              Jimmy has built a fast-growing online audience with <strong>66,000+ YouTube subscribers</strong> and
               <strong> over 1 million views on TikTok</strong>. He has performed at clubs, corporate shows, and regularly hosts shows throughout Utah. He has been featured in <strong>SLUG Magazine</strong>, <strong>Don’t Tell Comedy (Utah)</strong> and even the local news. Jimmy has quickly become a familiar face in the Salt Lake comedy scene.
             </p>
           </div>
