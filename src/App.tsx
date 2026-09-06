@@ -32,7 +32,7 @@ const FEATURED_TAPE = {
 
 const FEATURED_TAPE = {
   title: 'Featured Tape',
-  url: 'https://www.youtube.com/embed/l8nfLOJkOWs',
+  url: 'https://www.youtube.com/embed/yw1UEgrmzFY',
   note: 'This is the one to watch.',
 }
 
@@ -120,64 +120,56 @@ function HomePage() {
         )}
         <div className="heroOverlay" />
 
-        <div className="container heroContent">
-          <h1 className="name">
-            <span className="nameFont">Jimmy Glasscock</span>
+        <div className="heroContent">
+          <p className="heroKicker">Stand-up comedian · Salt Lake City</p>
+          <h1 className="heroName">
+            <span className="heroFirst">Jimmy</span>
+            <span className="heroLast">Glasscock</span>
           </h1>
 
-          <p className="subline">Stand-Up Comedian from Salt Lake City.</p>
-
-          <div className="ctaRow">
-            <a className="btn primary" href={`mailto:${EMAIL}`}>
-              Contact me
+          <div className="heroCtas">
+            <a className="heroCta" href={`mailto:${EMAIL}`}>
+              Contact
             </a>
             <a
-              className="btn ghost"
+              className="heroCta"
               href={INSTAGRAM_URL}
               target="_blank"
               rel="noreferrer"
             >
-              @jimmyglasscock
+              Instagram
             </a>
           </div>
+        </div>
 
-          <div className="stats" aria-label="Highlights">
-            <a
-              className="stat statLink youtubeCustom"
-              href="https://www.youtube.com/@JimmyGlasscock"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img
-                className="youtubeAvatar"
-                src="/photos/youtube-avatar.jpg"
-                alt="Jimmy Glasscock YouTube"
-              />
-              <div>
-                <div className="statTop">66K+</div>
-                <div className="statBottom">YouTube subscribers</div>
-              </div>
-            </a>
+        <nav className="heroMeta" aria-label="Highlights">
           <a
-            className="stat statLink"
+            className="heroMetaItem"
+            href="https://www.youtube.com/@JimmyGlasscock"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <span className="heroMetaLabel">YouTube</span>
+            <span className="heroMetaValue">66K+</span>
+          </a>
+          <a
+            className="heroMetaItem"
             href="https://www.tiktok.com/@jimmyglasscock?lang=en"
             target="_blank"
             rel="noreferrer"
-            aria-label="Jimmy Glasscock on TikTok"
           >
-            <div className="statTop">1M+</div>
-            <div className="statBottom">TikTok views</div>
+            <span className="heroMetaLabel">TikTok</span>
+            <span className="heroMetaValue">1M+</span>
           </a>
-            <div className="stat">
-              <div className="statTop">Don’t Tell Comedy</div>
-              <div className="statBottom">Utah feature</div>
-            </div>
-            <div className="stat">
-              <div className="statTop">Since</div>
-              <div className="statBottom">July 25, 2023</div>
-            </div>
-          </div>
-        </div>
+          <span className="heroMetaItem">
+            <span className="heroMetaLabel">Don’t Tell</span>
+            <span className="heroMetaValue">Utah</span>
+          </span>
+          <span className="heroMetaItem">
+            <span className="heroMetaLabel">Since</span>
+            <span className="heroMetaValue">2023</span>
+          </span>
+        </nav>
       </header>
 
       <main className="container">
