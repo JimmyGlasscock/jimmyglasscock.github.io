@@ -158,11 +158,12 @@ a{ color: inherit; text-decoration: none; }
 }
 
 .heroFirst{
-  font-family: "Instrument Serif", Georgia, "Times New Roman", serif;
-  font-style: italic;
+  font-family: "Bebas Neue", Impact, "Arial Narrow", sans-serif;
   font-weight: 400;
   font-size: clamp(2.4rem, 10vw, 5.4rem);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.14em;
   color: #fff;
   text-shadow:
     0 2px 0 rgba(0,0,0,0.45),
