@@ -158,7 +158,7 @@ a{ color: inherit; text-decoration: none; }
 }
 
 .heroFirst{
-  font-size: clamp(3.12rem, 13vw, 7rem);
+  font-size: clamp(4rem, 16.5vw, 9rem);
   margin-bottom: 0.14em;
   color: #fff;
   text-shadow:
@@ -185,6 +185,13 @@ a{ color: inherit; text-decoration: none; }
   font-family: "Big Shoulders Display", Impact, "Arial Narrow", sans-serif;
   font-weight: 800;
   letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.heroTypeAnton{
+  font-family: Anton, Impact, "Arial Narrow", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
