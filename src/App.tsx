@@ -123,8 +123,9 @@ function HomePage() {
         <div className="heroContent">
           <p className="heroKicker">Stand-up comedian · Salt Lake City</p>
           <h1 className="heroName">
-            <span className="heroFirst">Jimmy</span>
-            <span className="heroLast">Glasscock</span>
+            {/* Swap heroTypeShoulders → heroTypeBebas to revert the name font */}
+            <span className="heroFirst heroTypeShoulders">Jimmy</span>
+            <span className="heroLast heroTypeShoulders">Glasscock</span>
           </h1>
 
           <div className="heroCtas">
