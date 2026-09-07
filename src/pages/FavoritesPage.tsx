@@ -88,10 +88,78 @@ const CATEGORIES: FavCategory[] = [
       { title: 'Iron Man', img: '/favorites/iron-man.jpg', alt: 'Iron Man poster' },
     ],
   },
+  {
+    id: 'music',
+    title: 'Music',
+    items: [
+      {
+        title: 'Joji',
+        credit: 'Ballads 1',
+        img: '/favorites/music/joji-ballads-1.jpg',
+        alt: 'Joji - Ballads 1 album cover',
+      },
+      {
+        title: 'Huron John',
+        credit: 'Fanta Fantasy',
+        img: '/favorites/music/huron-john-fanta-fantasy.jpg',
+        alt: 'Huron John - Fanta Fantasy album cover',
+      },
+      {
+        title: 'The Cranberries',
+        credit: 'Everybody Else Is Doing It, So Why Can\'t We?',
+        img: '/favorites/music/cranberries-everybody-else.jpg',
+        alt: 'The Cranberries - Everybody Else Is Doing It, So Why Can\'t We? album cover',
+      },
+      {
+        title: 'J Arthur Keenes Band',
+        credit: 'Mighty Social Lion',
+        img: '/favorites/music/j-arthur-keenes-mighty-social-lion.jpg',
+        alt: 'J Arthur Keenes Band - Mighty Social Lion album cover',
+      },
+      {
+        title: 'Still Woozy',
+        credit: 'Loveseat',
+        img: '/favorites/music/still-woozy-loveseat.jpg',
+        alt: 'Still Woozy - Loveseat album cover',
+      },
+      {
+        title: 'Vampire Weekend',
+        credit: 'Modern Vampires of the City',
+        img: '/favorites/music/vampire-weekend-modern-vampires.jpg',
+        alt: 'Vampire Weekend - Modern Vampires of the City album cover',
+      },
+      {
+        title: 'Foster The People',
+        credit: 'Torches',
+        img: '/favorites/music/foster-the-people-torches.jpg',
+        alt: 'Foster The People - Torches album cover',
+      },
+      {
+        title: 'CHVRCHES',
+        credit: 'The Bones of What you Believe',
+        img: '/favorites/music/chvrches-bones.jpg',
+        alt: 'CHVRCHES - The Bones of What you Believe album cover',
+      },
+      {
+        title: 'Lord Huron',
+        credit: 'Lonesome Dreams',
+        img: '/favorites/music/lord-huron-lonesome-dreams.jpg',
+        alt: 'Lord Huron - Lonesome Dreams album cover',
+      },
+      {
+        title: 'Vansire',
+        credit: 'Angel Youth',
+        img: '/favorites/music/vansire-angel-youth.jpg',
+        alt: 'Vansire - Angel Youth album cover',
+      },
+    ],
+  },
 ]
 
 function FavCarousel({ category }: { category: FavCategory }) {
   const trackRef = useRef<HTMLDivElement | null>(null)
+  const pausedRef = useRef(false)
+  const reducedMotionRef = useRef(false)
 
   const scrollByCard = (dir: -1 | 1) => {
     const track = trackRef.current
@@ -99,11 +167,54 @@ function FavCarousel({ category }: { category: FavCategory }) {
     const card = track.querySelector('.favCard') as HTMLElement | null
     const gap = 14
     const amount = (card?.offsetWidth ?? 220) + gap
+    if (dir === 1 && track.scrollLeft + track.clientWidth >= track.scrollWidth - 2) {
+      track.scrollTo({ left: 0, behavior: 'smooth' })
+      return
+    }
+    if (dir === -1 && track.scrollLeft <= 2) {
+      track.scrollTo({ left: track.scrollWidth, behavior: 'smooth' })
+      return
+    }
     track.scrollBy({ left: dir * amount, behavior: 'smooth' })
   }
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const updateMotionPreference = () => {
+      reducedMotionRef.current = mediaQuery.matches
+    }
+    updateMotionPreference()
+    mediaQuery.addEventListener?.('change', updateMotionPreference)
+
+    const timer = window.setInterval(() => {
+      if (!pausedRef.current && !reducedMotionRef.current) scrollByCard(1)
+    }, 2000)
+
+    return () => {
+      window.clearInterval(timer)
+      mediaQuery.removeEventListener?.('change', updateMotionPreference)
+    }
+  })
+
   return (
-    <section className="favWindow" aria-labelledby={`${category.id}-title`}>
+    <section
+      className="favWindow"
+      aria-labelledby={`${category.id}-title`}
+      onMouseEnter={() => {
+        pausedRef.current = true
+      }}
+      onMouseLeave={() => {
+        pausedRef.current = false
+      }}
+      onFocus={() => {
+        pausedRef.current = true
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          pausedRef.current = false
+        }
+      }}
+    >
       <div className="favTitlebar">
         <span className="favTitlebarIcon" aria-hidden="true">
           ★
