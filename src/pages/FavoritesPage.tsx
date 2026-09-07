@@ -56,39 +56,7 @@ const CATEGORIES: FavCategory[] = [
       },
     ],
   },
-  {
-    id: 'games',
-    title: 'Video Games',
-    items: [
-      { title: 'Chrono Trigger', img: '/favorites/chrono-trigger.jpg', alt: 'Chrono Trigger cover' },
-      {
-        title: 'Pokémon FireRed & LeafGreen',
-        img: '/favorites/pokemon-frlg.jpg',
-        alt: 'Pokémon FireRed and LeafGreen cover',
-      },
-      { title: 'Final Fantasy VII', img: '/favorites/ff7.jpg', alt: 'Final Fantasy VII cover' },
-      {
-        title: 'The Legend of Zelda: A Link to the Past',
-        img: '/favorites/zelda-lttp.jpg',
-        alt: 'The Legend of Zelda A Link to the Past cover',
-      },
-      { title: 'Skyrim', img: '/favorites/skyrim.jpg', alt: 'The Elder Scrolls V Skyrim cover' },
-      { title: 'Mega Man II', img: '/favorites/megaman2.jpg', alt: 'Mega Man 2 cover' },
-      { title: 'Super Mario Bros.', img: '/favorites/smb.jpg', alt: 'Super Mario Bros cover' },
-      { title: 'Minecraft', img: '/favorites/minecraft.jpg', alt: 'Minecraft creeper face' },
-      { title: 'Diablo I', img: '/favorites/diablo.jpg', alt: 'Diablo cover' },
-    ],
-  },
-  {
-    id: 'movies',
-    title: 'Movies',
-    items: [
-      { title: 'Baby Driver', img: '/favorites/baby-driver.jpg', alt: 'Baby Driver poster' },
-      { title: 'Whiplash', img: '/favorites/whiplash.jpg', alt: 'Whiplash poster' },
-      { title: 'Iron Man', img: '/favorites/iron-man.jpg', alt: 'Iron Man poster' },
-    ],
-  },
-  {
+    {
     id: 'music',
     title: 'Music',
     items: [
@@ -154,6 +122,38 @@ const CATEGORIES: FavCategory[] = [
       },
     ],
   },
+  {
+    id: 'games',
+    title: 'Video Games',
+    items: [
+      { title: 'Chrono Trigger', img: '/favorites/chrono-trigger.jpg', alt: 'Chrono Trigger cover' },
+      {
+        title: 'Pokémon FireRed & LeafGreen',
+        img: '/favorites/pokemon-frlg.jpg',
+        alt: 'Pokémon FireRed and LeafGreen cover',
+      },
+      { title: 'Final Fantasy VII', img: '/favorites/ff7.jpg', alt: 'Final Fantasy VII cover' },
+      {
+        title: 'The Legend of Zelda: A Link to the Past',
+        img: '/favorites/zelda-lttp.jpg',
+        alt: 'The Legend of Zelda A Link to the Past cover',
+      },
+      { title: 'Skyrim', img: '/favorites/skyrim.jpg', alt: 'The Elder Scrolls V Skyrim cover' },
+      { title: 'Mega Man II', img: '/favorites/megaman2.jpg', alt: 'Mega Man 2 cover' },
+      { title: 'Super Mario Bros.', img: '/favorites/smb.jpg', alt: 'Super Mario Bros cover' },
+      { title: 'Minecraft', img: '/favorites/minecraft.jpg', alt: 'Minecraft creeper face' },
+      { title: 'Diablo I', img: '/favorites/diablo.jpg', alt: 'Diablo cover' },
+    ],
+  },
+  {
+    id: 'movies',
+    title: 'Movies',
+    items: [
+      { title: 'Baby Driver', img: '/favorites/baby-driver.jpg', alt: 'Baby Driver poster' },
+      { title: 'Whiplash', img: '/favorites/whiplash.jpg', alt: 'Whiplash poster' },
+      { title: 'Iron Man', img: '/favorites/iron-man.jpg', alt: 'Iron Man poster' },
+    ],
+  },
 ]
 
 function FavCarousel({ category }: { category: FavCategory }) {
@@ -188,7 +188,7 @@ function FavCarousel({ category }: { category: FavCategory }) {
 
     const timer = window.setInterval(() => {
       if (!pausedRef.current && !reducedMotionRef.current) scrollByCard(1)
-    }, 2000)
+    }, 4500)
 
     return () => {
       window.clearInterval(timer)
