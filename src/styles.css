@@ -1244,6 +1244,8 @@ a.heroMetaItem:hover{
 .bookingProjectsWrap{
   margin-top: .9rem;
   display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
   justify-content: center;
 }
 
@@ -1440,4 +1442,292 @@ a.heroMetaItem:hover{
   .pressBody{
     padding: 1.25rem;
   }
+}
+
+/* =========================================================
+   FAVORITES PAGE — 90s GeoCities / Windows 98
+   ========================================================= */
+
+body.favRetroBody{
+  background: #120018;
+  background-attachment: scroll;
+}
+
+body.favRetroBody .navbar{
+  background: #c0c0c0;
+  border-bottom: 2px solid #5a5a5a;
+  box-shadow: inset 1px 1px 0 #fff, 0 3px 0 #000;
+  backdrop-filter: none;
+}
+
+body.favRetroBody .navLink{
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #fff #5a5a5a #5a5a5a #fff;
+  color: #111;
+  border-radius: 0;
+  font-family: Tahoma, "MS Sans Serif", sans-serif;
+  font-weight: 700;
+}
+
+body.favRetroBody .navLink:hover{
+  background: #dcdcdc;
+  transform: none;
+}
+
+body.favRetroBody .navLink[aria-current="page"]{
+  background: #000080;
+  color: #fff;
+  border-color: #5a5a5a #fff #fff #5a5a5a;
+}
+
+.favPage{
+  min-height: 100svh;
+  color: #fff8a8;
+  font-family: VT323, "Courier New", monospace;
+  background-color: #120018;
+  background-image:
+    radial-gradient(2px 2px at 12% 18%, rgba(255,255,255,0.85), transparent 60%),
+    radial-gradient(2px 2px at 28% 72%, rgba(255,180,255,0.7), transparent 60%),
+    radial-gradient(1px 1px at 64% 22%, rgba(160,255,255,0.9), transparent 60%),
+    radial-gradient(2px 2px at 82% 58%, rgba(255,255,255,0.7), transparent 60%),
+    radial-gradient(1px 1px at 46% 44%, rgba(255,255,180,0.8), transparent 60%),
+    repeating-linear-gradient(
+      180deg,
+      rgba(0,0,0,0.18) 0px,
+      rgba(0,0,0,0.18) 1px,
+      transparent 1px,
+      transparent 4px
+    ),
+    linear-gradient(180deg, #2a0050 0%, #120018 40%, #001018 100%);
+  padding: 0 0 2.5rem;
+}
+
+.favInner{
+  width: min(1100px, calc(100% - 1.25rem));
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.favHero{
+  text-align: center;
+  padding: 1.4rem 0.5rem 1.1rem;
+}
+
+.favBlink{
+  margin: 0 0 0.7rem;
+  color: #ff4dff;
+  letter-spacing: 0.28em;
+  font-size: 1.05rem;
+  text-shadow: 0 0 10px #ff4dff;
+  animation: favPulse 1.8s ease-in-out infinite;
+}
+
+.favH1{
+  margin: 0;
+  font-family: "Press Start 2P", "Courier New", monospace;
+  font-size: clamp(0.85rem, 3.6vw, 1.55rem);
+  line-height: 1.45;
+  color: #39ff14;
+  text-shadow:
+    3px 3px 0 #7b00ff,
+    0 0 18px rgba(57,255,20,0.55);
+}
+
+.favTagline{
+  margin: 0.9rem 0 0.35rem;
+  font-size: 1.35rem;
+  color: #7ef9ff;
+}
+
+.favHint{
+  margin: 0;
+  font-size: 1.05rem;
+  color: #ffd54a;
+}
+
+.favWindow{
+  margin: 1.15rem 0;
+  background: #c0c0c0;
+  color: #111;
+  border: 3px solid;
+  border-color: #fff #5a5a5a #5a5a5a #fff;
+  box-shadow: 4px 4px 0 #000;
+}
+
+.favTitlebar{
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: linear-gradient(90deg, #000080, #1084d0);
+  color: #fff;
+  padding: 0.35rem 0.45rem;
+  font-family: Tahoma, "MS Sans Serif", sans-serif;
+}
+
+.favTitlebarIcon{
+  color: #ffd54a;
+}
+
+.favWindowTitle{
+  margin: 0;
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.favWindowBtns{
+  display: flex;
+  gap: 3px;
+}
+
+.favWindowBtns span{
+  width: 1.05rem;
+  height: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #c0c0c0;
+  color: #111;
+  border: 2px solid;
+  border-color: #fff #5a5a5a #5a5a5a #fff;
+  font-size: 0.7rem;
+  line-height: 1;
+}
+
+.favWindowBody{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 0.45rem 0.85rem;
+}
+
+.favArrow{
+  appearance: none;
+  width: 2.6rem;
+  min-height: 2.6rem;
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #fff #5a5a5a #5a5a5a #fff;
+  color: #111;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 1px 1px 0 #000;
+}
+
+.favArrow:active{
+  border-color: #5a5a5a #fff #fff #5a5a5a;
+}
+
+.favTrack{
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0.25rem;
+  padding: 0.25rem 0.15rem 0.55rem;
+  -webkit-overflow-scrolling: touch;
+  outline: none;
+}
+
+.favTrack::-webkit-scrollbar{
+  height: 10px;
+}
+
+.favTrack::-webkit-scrollbar-track{
+  background: #808080;
+  border: 1px solid #5a5a5a;
+}
+
+.favTrack::-webkit-scrollbar-thumb{
+  background: #c0c0c0;
+  border: 2px solid;
+  border-color: #fff #5a5a5a #5a5a5a #fff;
+}
+
+.favCard{
+  flex: 0 0 min(68vw, 210px);
+  scroll-snap-align: start;
+  background: #000;
+  color: #39ff14;
+  border: 3px solid #ff4dff;
+  box-shadow: 3px 3px 0 #7b00ff;
+  padding: 0.45rem 0.45rem 0.55rem;
+}
+
+.favCardArt{
+  aspect-ratio: 3 / 4;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #1a0030,
+      #1a0030 8px,
+      #240048 8px,
+      #240048 16px
+    );
+  border: 2px solid #7ef9ff;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favCardArt img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.favImgCover{ object-fit: cover; }
+.favImgContain{ object-fit: contain; background: #050010; }
+
+.favCardTitle{
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+  line-height: 1.15;
+  color: #fff8a8;
+}
+
+.favCardCredit{
+  margin: 0.15rem 0 0;
+  font-size: 1.05rem;
+  color: #7ef9ff;
+}
+
+.favFooter{
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #ff4dff;
+  font-size: 1.15rem;
+}
+
+.favFooter p{ margin: 0.2rem 0; }
+
+@keyframes favPulse{
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+@media (max-width: 640px){
+  .favWindowBody{
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "track track"
+      "prev next";
+  }
+
+  .favTrack{ grid-area: track; }
+
+  .favArrow:first-of-type{ grid-area: prev; width: 100%; }
+  .favArrow:last-of-type{ grid-area: next; width: 100%; }
+
+  .favCard{
+    flex-basis: min(74vw, 240px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .favBlink{ animation: none; }
+  .favTrack{ scroll-behavior: auto; }
 }

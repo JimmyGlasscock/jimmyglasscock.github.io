@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
+import FavoritesPage from './pages/FavoritesPage'
 
 const EMAIL = 'jamesglasscock99@gmail.com'
 const INSTAGRAM_URL = 'https://instagram.com/jimmyglasscock'
@@ -316,6 +317,9 @@ function HomePage() {
             <Link className="btn ghost" to="/projects">
               Projects
             </Link>
+            <Link className="btn ghost" to="/favorites">
+              My Favorite Things
+            </Link>
           </div>
         </section>
       </main>
@@ -332,6 +336,8 @@ export default function App() {
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/" element={<ProjectsPage />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetailPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+        <Route path="/favorites/" element={<FavoritesPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </>
