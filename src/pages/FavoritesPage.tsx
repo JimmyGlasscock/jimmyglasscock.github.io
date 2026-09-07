@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useLayoutEffect, useRef } from 'react'
 
 type FavItem = {
   title: string
@@ -276,6 +276,10 @@ function FavCarousel({ category }: { category: FavCategory }) {
 }
 
 export default function FavoritesPage() {
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   useEffect(() => {
     document.body.classList.add('favRetroBody')
     const prevTitle = document.title

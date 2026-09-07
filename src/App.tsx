@@ -313,14 +313,29 @@ function HomePage() {
               </a>
             </div>
           </div>
-          <div className="bookingProjectsWrap">
-            <Link className="btn ghost" to="/projects">
-              Projects
-            </Link>
-            <Link className="btn ghost" to="/favorites">
-              Favorites
-            </Link>
-          </div>
+          <footer className="siteFooter" aria-label="Explore more">
+            <p className="siteFooterEyebrow">Keep exploring</p>
+            <div className="siteFooterLinks">
+              <Link className="siteFooterLink" to="/projects">
+                <span>
+                  <span className="siteFooterLinkTitle">Projects</span>
+                  <span className="siteFooterLinkNote">Watch, listen, and browse the work.</span>
+                </span>
+                <span className="siteFooterArrow" aria-hidden="true">
+                  ↗
+                </span>
+              </Link>
+              <Link className="siteFooterLink" to="/favorites">
+                <span>
+                  <span className="siteFooterLinkTitle">Favorites</span>
+                  <span className="siteFooterLinkNote">A few things worth sharing.</span>
+                </span>
+                <span className="siteFooterArrow" aria-hidden="true">
+                  ↗
+                </span>
+              </Link>
+            </div>
+          </footer>
         </section>
       </main>
     </div>
