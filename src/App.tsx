@@ -318,7 +318,7 @@ function HomePage() {
               Projects
             </Link>
             <Link className="btn ghost" to="/favorites">
-              My Favorite Things
+              Favorites
             </Link>
           </div>
         </section>

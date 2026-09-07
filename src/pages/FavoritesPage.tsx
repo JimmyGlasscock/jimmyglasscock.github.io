@@ -181,9 +181,6 @@ export default function FavoritesPage() {
         <header className="favHero">
           <p className="favBlink">★ WELCOME ★</p>
           <h1 className="favH1">My Favorite Things</h1>
-          <p className="favTagline">
-            A totally tubular shrine to comedy, books, games, and movies.
-          </p>
           <p className="favHint">Swipe the rows · tap the arrows</p>
         </header>
 
