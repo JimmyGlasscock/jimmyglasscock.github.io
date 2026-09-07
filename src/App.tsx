@@ -317,14 +317,10 @@ function HomePage() {
             <p className="siteFooterEyebrow">More</p>
             <div className="siteFooterLinks">
               <Link className="siteFooterLink" to="/projects">
-                <span>
-                  <span className="siteFooterLinkTitle">Projects</span>
-                </span>
+                <span className="siteFooterLinkTitle">Projects</span>
               </Link>
               <Link className="siteFooterLink" to="/favorites">
-                <span>
-                  <span className="siteFooterLinkTitle">Favorites</span>
-                </span>
+                <span className="siteFooterLinkTitle">Favorites</span>
               </Link>
             </div>
           </footer>
