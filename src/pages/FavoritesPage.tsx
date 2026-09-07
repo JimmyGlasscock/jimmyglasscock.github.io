@@ -156,6 +156,15 @@ const CATEGORIES: FavCategory[] = [
   },
 ]
 
+const VIDEOS = [
+  { title: 'You Need to Be Bored. Here\'s Why.', url: 'https://youtu.be/orQKfIXMiA8' },
+  { title: 'Key & Peele - Make-A-Wish', url: 'https://youtu.be/C5uyq0aMRw0' },
+  {
+    title: 'When Your Girlfriend Leaves You for a Pro Athlete - Mekki Leeper - Stand-Up Featuring',
+    url: 'https://youtu.be/gR9izDp89c0',
+  },
+]
+
 function FavCarousel({ category }: { category: FavCategory }) {
   const trackRef = useRef<HTMLDivElement | null>(null)
   const pausedRef = useRef(false)
@@ -302,6 +311,34 @@ export default function FavoritesPage() {
         {CATEGORIES.map((category) => (
           <FavCarousel key={category.id} category={category} />
         ))}
+
+        <section className="favWindow favVideos" aria-labelledby="videos-title">
+          <div className="favTitlebar">
+            <span className="favTitlebarIcon" aria-hidden="true">
+              ★
+            </span>
+            <h2 id="videos-title" className="favWindowTitle">
+              Videos
+            </h2>
+            <span className="favWindowBtns" aria-hidden="true">
+              <span>_</span>
+              <span>□</span>
+              <span>×</span>
+            </span>
+          </div>
+
+          <div className="favVideosBody">
+            <ul className="favVideoList">
+              {VIDEOS.map((video) => (
+                <li key={video.url}>
+                  <a href={video.url} target="_blank" rel="noreferrer">
+                    {video.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
 
         <footer className="favFooter">
           <p>Best viewed in Netscape Navigator 4.0 at 800×600</p>
