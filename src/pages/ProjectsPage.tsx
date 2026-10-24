@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 
 const PROJECTS = [
   {
+    slug: 'alttp-ds',
+    title: 'ALTTP-DS',
+    gifSrc: '/media/link.gif',
+    gifAlt: 'Link character GIF',
+  },
+  {
     slug: 'fire-red-leaf-green-enhancements',
     title: 'Pokémon FireRed & LeafGreen Enhancements',
     gifSrc: '/media/red.gif',

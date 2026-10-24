@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import ProjectsPage from './pages/ProjectsPage'
 import NotFoundPage from './pages/NotFoundPage'
 import ProjectDetailPage from './pages/ProjectDetailPage'
+import AlttpDsPage from './pages/AlttpDsPage'
 import FavoritesPage from './pages/FavoritesPage'
 
 const EMAIL = 'jamesglasscock99@gmail.com'
@@ -338,6 +339,8 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/projects/" element={<ProjectsPage />} />
+        <Route path="/projects/alttp-ds" element={<AlttpDsPage />} />
+        <Route path="/projects/alttp-ds/" element={<AlttpDsPage />} />
         <Route path="/projects/:projectSlug" element={<ProjectDetailPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/favorites/" element={<FavoritesPage />} />
